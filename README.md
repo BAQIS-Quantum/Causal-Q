@@ -1,6 +1,6 @@
 # Causal-Q (self-contained)
 
-All working copies of legacy scripts are under `CausCal-Q/scripts/`; original repo files stay untouched. Environment: `conda activate calibration-env`.
+All working copies of legacy scripts are under `CausCal-Q/scripts/`; original repo files stay untouched.
 
 ## Dependencies
 
