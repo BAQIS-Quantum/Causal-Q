@@ -1,0 +1,322 @@
+{
+  "edge_comparison": [
+    {
+      "edge": [
+        "Phi_0",
+        "f_0"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_0",
+        "f_4"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_1",
+        "f_1"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_1",
+        "f_2"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_10",
+        "f_10"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_10",
+        "f_11"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_10",
+        "f_14"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_10",
+        "f_6"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_10",
+        "f_9"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_11",
+        "f_10"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_11",
+        "f_11"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_12",
+        "f_12"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_12",
+        "f_13"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_12",
+        "f_8"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_13",
+        "f_12"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_13",
+        "f_13"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_13",
+        "f_14"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_14",
+        "f_10"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_14",
+        "f_13"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_14",
+        "f_14"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_14",
+        "f_15"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_15",
+        "f_11"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_15",
+        "f_14"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_15",
+        "f_15"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_2",
+        "f_1"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_2",
+        "f_2"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_2",
+        "f_6"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_3",
+        "f_3"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_3",
+        "f_7"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_4",
+        "f_0"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_4",
+        "f_4"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_5",
+        "f_5"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_5",
+        "f_6"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_5",
+        "f_9"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_6",
+        "f_10"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_6",
+        "f_2"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_6",
+        "f_5"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_6",
+        "f_6"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_7",
+        "f_3"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_7",
+        "f_7"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_8",
+        "f_12"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_8",
+        "f_8"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_9",
+        "f_10"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_9",
+        "f_5"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_9",
+        "f_9"
+      ],
+      "status": "unoriented"
+    }
+  ],
+  "joint_arrows": [],
+  "ambiguous_triples": [],
+  "displayed_collider_agreements": 0
+}

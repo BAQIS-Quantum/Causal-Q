@@ -1,0 +1,1076 @@
+{
+  "schema": "causal-q-flux-robustness-screen-v1",
+  "protocol": {
+    "sample_count": 20000,
+    "alg1": {
+      "threshold": 0.0,
+      "mi_k": 130,
+      "cmi_k": 3,
+      "seed": 43,
+      "max_cond_set": 2
+    },
+    "conditions": {
+      "iid_clean": {
+        "flux": "flux_iid",
+        "frequency": "nn4_iid_clean",
+        "rho": 0.0,
+        "sigma_ghz": 0.0
+      },
+      "rho03_clean": {
+        "flux": "flux_rho03",
+        "frequency": "nn4_rho03_clean",
+        "rho": 0.3,
+        "sigma_ghz": 0.0
+      },
+      "iid_noise": {
+        "flux": "flux_iid",
+        "frequency": "nn4_iid_clean",
+        "rho": 0.0,
+        "sigma_ghz": 0.0005
+      }
+    },
+    "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+    "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+    "dependencies": {
+      "numpy": "1.26.4",
+      "scipy": "1.14.1",
+      "scikit-learn": "1.5.2",
+      "NPEET": "1.0.1"
+    },
+    "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+    "marginal_acceleration": {
+      "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+      "numba": "0.60.0"
+    }
+  },
+  "cells": [
+    {
+      "repeat": 0,
+      "condition": "iid_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "227d8406f59005bc5661c884bd9d485a1de952376433bc9bbcbc91baa3879510"
+      },
+      "test_count": 869,
+      "elapsed_seconds": 230.05189512483776,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 29,
+      "own_site_retained": 16,
+      "tp": 29,
+      "fp": 0,
+      "fn": 19,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.6041666666666666,
+      "trace_sha256": "2d6f71131a796f37502085b134f3d16c9a1264741785fe71d20726b9deef28d8"
+    },
+    {
+      "repeat": 0,
+      "condition": "iid_noise",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "227d8406f59005bc5661c884bd9d485a1de952376433bc9bbcbc91baa3879510"
+      },
+      "test_count": 878,
+      "elapsed_seconds": 232.8099935427308,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 29,
+      "own_site_retained": 16,
+      "tp": 29,
+      "fp": 0,
+      "fn": 19,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.6041666666666666,
+      "trace_sha256": "e0e49717977640c59fc4e0c858d35b284b04f4ed1e8c37d8fdca01204fadff66"
+    },
+    {
+      "repeat": 0,
+      "condition": "rho03_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "227d8406f59005bc5661c884bd9d485a1de952376433bc9bbcbc91baa3879510"
+      },
+      "test_count": 749,
+      "elapsed_seconds": 224.17363762483,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 29,
+      "own_site_retained": 16,
+      "tp": 29,
+      "fp": 0,
+      "fn": 19,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.6041666666666666,
+      "trace_sha256": "5f2a9994822f0960ed1c2bc44378b268ade046c0ddeca58aa0599c0957a16439"
+    },
+    {
+      "repeat": 1,
+      "condition": "iid_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "cbe37ae06e90411012c6ff8958c4e6344b29ffbaee439b93be7820d2baf25ec4"
+      },
+      "test_count": 846,
+      "elapsed_seconds": 223.3839219585061,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 30,
+      "own_site_retained": 16,
+      "tp": 30,
+      "fp": 0,
+      "fn": 18,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.625,
+      "trace_sha256": "a7610f351155b90bac84e9acd384933c1cb7b81b6b6983a889c12f739ce587f2"
+    },
+    {
+      "repeat": 1,
+      "condition": "iid_noise",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "cbe37ae06e90411012c6ff8958c4e6344b29ffbaee439b93be7820d2baf25ec4"
+      },
+      "test_count": 862,
+      "elapsed_seconds": 239.0951043749228,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 30,
+      "own_site_retained": 16,
+      "tp": 30,
+      "fp": 0,
+      "fn": 18,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.625,
+      "trace_sha256": "768e753ceaaa5203c6c5d6459d158fd8bbc8dc57d7b5a6809969cb03f24280e1"
+    },
+    {
+      "repeat": 1,
+      "condition": "rho03_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "cbe37ae06e90411012c6ff8958c4e6344b29ffbaee439b93be7820d2baf25ec4"
+      },
+      "test_count": 738,
+      "elapsed_seconds": 233.7303725425154,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 30,
+      "own_site_retained": 16,
+      "tp": 30,
+      "fp": 0,
+      "fn": 18,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.625,
+      "trace_sha256": "2adeb340333338525e31974c047db4de5e17393eea85b03c241d57d3d0f1f6b6"
+    },
+    {
+      "repeat": 2,
+      "condition": "iid_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "27b54b4f27830cab9f7ab0cdf07680ac139c57ec4637998a9ade6fac23d100e1"
+      },
+      "test_count": 900,
+      "elapsed_seconds": 241.93041324988008,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 28,
+      "own_site_retained": 16,
+      "tp": 28,
+      "fp": 0,
+      "fn": 20,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.5833333333333334,
+      "trace_sha256": "806e54f249fe136f10c1d2e689dda907b8736d72f90e4a80d9eb95b8d9d7d028"
+    },
+    {
+      "repeat": 2,
+      "condition": "iid_noise",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "27b54b4f27830cab9f7ab0cdf07680ac139c57ec4637998a9ade6fac23d100e1"
+      },
+      "test_count": 900,
+      "elapsed_seconds": 161.47914970759302,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 29,
+      "own_site_retained": 16,
+      "tp": 29,
+      "fp": 0,
+      "fn": 19,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.6041666666666666,
+      "trace_sha256": "838225f53db7b0be941d913a68dff146d117a082c64dff7851b37542fd5fd101"
+    },
+    {
+      "repeat": 2,
+      "condition": "rho03_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "27b54b4f27830cab9f7ab0cdf07680ac139c57ec4637998a9ade6fac23d100e1"
+      },
+      "test_count": 740,
+      "elapsed_seconds": 226.59245029184967,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 29,
+      "own_site_retained": 16,
+      "tp": 29,
+      "fp": 0,
+      "fn": 19,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.6041666666666666,
+      "trace_sha256": "fa1cc6c888bd09c12432310d6076c94abc1e17c90100f39eaeb5b7fc5e252a12"
+    },
+    {
+      "repeat": 3,
+      "condition": "iid_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "943ab03f9c90474f6dd933881974edf7948e54cb2de9ce580690194aca619fac"
+      },
+      "test_count": 837,
+      "elapsed_seconds": 157.81963195838034,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 29,
+      "own_site_retained": 16,
+      "tp": 28,
+      "fp": 1,
+      "fn": 20,
+      "tn": 191,
+      "precision": 0.9655172413793104,
+      "recall": 0.5833333333333334,
+      "trace_sha256": "fe9a2eefdd914588b7fcdf46a587c1dd26342629cd50dd1a30660ad519555fdf"
+    },
+    {
+      "repeat": 3,
+      "condition": "iid_noise",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "943ab03f9c90474f6dd933881974edf7948e54cb2de9ce580690194aca619fac"
+      },
+      "test_count": 842,
+      "elapsed_seconds": 161.40044029150158,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 29,
+      "own_site_retained": 16,
+      "tp": 28,
+      "fp": 1,
+      "fn": 20,
+      "tn": 191,
+      "precision": 0.9655172413793104,
+      "recall": 0.5833333333333334,
+      "trace_sha256": "78b1c36ac9a5a3423fe162c25b406587d5b1d75524984c19830e0bdfdd6fd2bb"
+    },
+    {
+      "repeat": 3,
+      "condition": "rho03_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "943ab03f9c90474f6dd933881974edf7948e54cb2de9ce580690194aca619fac"
+      },
+      "test_count": 694,
+      "elapsed_seconds": 140.3775131655857,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 30,
+      "own_site_retained": 16,
+      "tp": 30,
+      "fp": 0,
+      "fn": 18,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.625,
+      "trace_sha256": "5b0793669096b0c5a9a01e9b3e5c496001bb62b1068f47a6f9e14093155a030f"
+    },
+    {
+      "repeat": 4,
+      "condition": "iid_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "69e15566f801378b9d853dd34ef73a7af6486473705bf31d963f5d5f92ecb9c7"
+      },
+      "test_count": 827,
+      "elapsed_seconds": 165.14349679183215,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 29,
+      "own_site_retained": 16,
+      "tp": 29,
+      "fp": 0,
+      "fn": 19,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.6041666666666666,
+      "trace_sha256": "4e916ec4bc0bcc9fa452c7eeabee4c1bed9b26281e51352c7ac9de11eba56451"
+    },
+    {
+      "repeat": 4,
+      "condition": "iid_noise",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "69e15566f801378b9d853dd34ef73a7af6486473705bf31d963f5d5f92ecb9c7"
+      },
+      "test_count": 833,
+      "elapsed_seconds": 164.68804633338004,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 29,
+      "own_site_retained": 16,
+      "tp": 29,
+      "fp": 0,
+      "fn": 19,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.6041666666666666,
+      "trace_sha256": "c2b8f7bc6cef892274e02722387ed115999076b5422abd74d88fa0dcbad84e58"
+    },
+    {
+      "repeat": 4,
+      "condition": "rho03_clean",
+      "protocol": {
+        "sample_count": 20000,
+        "alg1": {
+          "threshold": 0.0,
+          "mi_k": 130,
+          "cmi_k": 3,
+          "seed": 43,
+          "max_cond_set": 2
+        },
+        "conditions": {
+          "iid_clean": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0
+          },
+          "rho03_clean": {
+            "flux": "flux_rho03",
+            "frequency": "nn4_rho03_clean",
+            "rho": 0.3,
+            "sigma_ghz": 0.0
+          },
+          "iid_noise": {
+            "flux": "flux_iid",
+            "frequency": "nn4_iid_clean",
+            "rho": 0.0,
+            "sigma_ghz": 0.0005
+          }
+        },
+        "screen_source_sha256": "b5907df2fe0f80c727e4ac99e4bd757d20f788c415db9c5207714d2bef5199c0",
+        "estimator_source_sha256": "b6557e7f6c980b0ea51179db59277dacace19ff135402fe651532d9ce700e3fd",
+        "dependencies": {
+          "numpy": "1.26.4",
+          "scipy": "1.14.1",
+          "scikit-learn": "1.5.2",
+          "NPEET": "1.0.1"
+        },
+        "driver_source_sha256": "c8985b6ad543efc103dd49d19309b17ea2882877ec9c14bcf274822ee290bc72",
+        "marginal_acceleration": {
+          "source_sha256": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469",
+          "numba": "0.60.0"
+        },
+        "sample_sha256": "69e15566f801378b9d853dd34ef73a7af6486473705bf31d963f5d5f92ecb9c7"
+      },
+      "test_count": 771,
+      "elapsed_seconds": 166.04305091686547,
+      "candidate_count": 240,
+      "physical_positive": 48,
+      "retained": 31,
+      "own_site_retained": 16,
+      "tp": 31,
+      "fp": 0,
+      "fn": 17,
+      "tn": 192,
+      "precision": 1.0,
+      "recall": 0.6458333333333334,
+      "trace_sha256": "f8d9df963f0cc711ad4ba0484d82d7546bcf83793dcb2866c7c9980049ef049a"
+    }
+  ],
+  "aggregate": {
+    "iid_clean": {
+      "precision": {
+        "n": 5,
+        "mean": 0.993103448275862,
+        "sd": 0.015421158465515773
+      },
+      "recall": {
+        "n": 5,
+        "mean": 0.6,
+        "sd": 0.017430417219459884
+      },
+      "tp": {
+        "n": 5,
+        "mean": 28.8,
+        "sd": 0.8366600265340756
+      },
+      "fp": {
+        "n": 5,
+        "mean": 0.2,
+        "sd": 0.447213595499958
+      },
+      "fn": {
+        "n": 5,
+        "mean": 19.2,
+        "sd": 0.8366600265340756
+      },
+      "tn": {
+        "n": 5,
+        "mean": 191.8,
+        "sd": 0.4472135954999579
+      },
+      "retained": {
+        "n": 5,
+        "mean": 29.0,
+        "sd": 0.7071067811865476
+      }
+    },
+    "rho03_clean": {
+      "precision": {
+        "n": 5,
+        "mean": 1.0,
+        "sd": 0.0
+      },
+      "recall": {
+        "n": 5,
+        "mean": 0.6208333333333333,
+        "sd": 0.01743041721945994
+      },
+      "tp": {
+        "n": 5,
+        "mean": 29.8,
+        "sd": 0.8366600265340756
+      },
+      "fp": {
+        "n": 5,
+        "mean": 0.0,
+        "sd": 0.0
+      },
+      "fn": {
+        "n": 5,
+        "mean": 18.2,
+        "sd": 0.8366600265340756
+      },
+      "tn": {
+        "n": 5,
+        "mean": 192.0,
+        "sd": 0.0
+      },
+      "retained": {
+        "n": 5,
+        "mean": 29.8,
+        "sd": 0.8366600265340756
+      }
+    },
+    "iid_noise": {
+      "precision": {
+        "n": 5,
+        "mean": 0.993103448275862,
+        "sd": 0.015421158465515773
+      },
+      "recall": {
+        "n": 5,
+        "mean": 0.6041666666666666,
+        "sd": 0.014731391274719726
+      },
+      "tp": {
+        "n": 5,
+        "mean": 29.0,
+        "sd": 0.7071067811865476
+      },
+      "fp": {
+        "n": 5,
+        "mean": 0.2,
+        "sd": 0.447213595499958
+      },
+      "fn": {
+        "n": 5,
+        "mean": 19.0,
+        "sd": 0.7071067811865476
+      },
+      "tn": {
+        "n": 5,
+        "mean": 191.8,
+        "sd": 0.4472135954999579
+      },
+      "retained": {
+        "n": 5,
+        "mean": 29.2,
+        "sd": 0.4472135954999579
+      }
+    }
+  }
+}

@@ -1,0 +1,7895 @@
+{
+  "source_prefix": "Phi",
+  "target_prefix": "f",
+  "threshold_bits": 0.0,
+  "mi_k": 130,
+  "cmi_k": 3,
+  "seed": 43,
+  "max_cond_set": 2,
+  "edges": [
+    [
+      "Phi_0",
+      "f_0"
+    ],
+    [
+      "Phi_0",
+      "f_4"
+    ],
+    [
+      "Phi_1",
+      "f_1"
+    ],
+    [
+      "Phi_1",
+      "f_2"
+    ],
+    [
+      "Phi_2",
+      "f_1"
+    ],
+    [
+      "Phi_2",
+      "f_2"
+    ],
+    [
+      "Phi_2",
+      "f_6"
+    ],
+    [
+      "Phi_3",
+      "f_3"
+    ],
+    [
+      "Phi_3",
+      "f_7"
+    ],
+    [
+      "Phi_4",
+      "f_0"
+    ],
+    [
+      "Phi_4",
+      "f_4"
+    ],
+    [
+      "Phi_5",
+      "f_4"
+    ],
+    [
+      "Phi_5",
+      "f_5"
+    ],
+    [
+      "Phi_5",
+      "f_6"
+    ],
+    [
+      "Phi_5",
+      "f_9"
+    ],
+    [
+      "Phi_6",
+      "f_2"
+    ],
+    [
+      "Phi_6",
+      "f_5"
+    ],
+    [
+      "Phi_6",
+      "f_6"
+    ],
+    [
+      "Phi_6",
+      "f_10"
+    ],
+    [
+      "Phi_7",
+      "f_3"
+    ],
+    [
+      "Phi_7",
+      "f_7"
+    ],
+    [
+      "Phi_8",
+      "f_8"
+    ],
+    [
+      "Phi_8",
+      "f_12"
+    ],
+    [
+      "Phi_9",
+      "f_9"
+    ],
+    [
+      "Phi_9",
+      "f_10"
+    ],
+    [
+      "Phi_10",
+      "f_6"
+    ],
+    [
+      "Phi_10",
+      "f_9"
+    ],
+    [
+      "Phi_10",
+      "f_10"
+    ],
+    [
+      "Phi_10",
+      "f_11"
+    ],
+    [
+      "Phi_10",
+      "f_14"
+    ],
+    [
+      "Phi_11",
+      "f_11"
+    ],
+    [
+      "Phi_11",
+      "f_15"
+    ],
+    [
+      "Phi_12",
+      "f_8"
+    ],
+    [
+      "Phi_12",
+      "f_12"
+    ],
+    [
+      "Phi_12",
+      "f_13"
+    ],
+    [
+      "Phi_13",
+      "f_12"
+    ],
+    [
+      "Phi_13",
+      "f_13"
+    ],
+    [
+      "Phi_13",
+      "f_14"
+    ],
+    [
+      "Phi_14",
+      "f_10"
+    ],
+    [
+      "Phi_14",
+      "f_13"
+    ],
+    [
+      "Phi_14",
+      "f_14"
+    ],
+    [
+      "Phi_14",
+      "f_15"
+    ],
+    [
+      "Phi_15",
+      "f_11"
+    ],
+    [
+      "Phi_15",
+      "f_14"
+    ],
+    [
+      "Phi_15",
+      "f_15"
+    ]
+  ],
+  "tests": [
+    {
+      "source": 0,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": 4.18273222181796,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.0013186309797318155,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 0.00039633157134941736,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": -0.0009469150419006103,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.06471204813304701,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 7.210383415800204e-06,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": -0.0013553690457940206,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": -0.0012987684532174842,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": 0.0018100967512513994,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 0.0014671750016595334,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": -0.002236514329560738,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": -0.000537695147191574,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": -0.0003409662419595658,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.000367401577010997,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": -0.0007268030483988272,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": -5.301714107765023e-05,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": 0.00015776233964661008,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 3.955302074301934,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 0.09751524452598206,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": -0.000902033407473208,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": -0.0004244690157723296,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": -0.0003287841192032675,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": -0.0007472156290814203,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": 0.0009749199612558744,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": 0.002584000094550529,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": -0.0006428477331767455,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": -0.0005067949173752435,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": -4.3874065279026956e-05,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": 0.0014070067930772217,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": -0.000981404252711821,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.0013429395138492772,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": 0.0015169183738591159,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": -5.1397654851590356e-05,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.11509760598386917,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 3.727556814260189,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 0.0026753462992525523,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.0012240705673453862,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.001365523476973314,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.023380770811359128,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": 0.00027166981794102566,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": 0.0035451928202364456,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": -0.0017744176044520367,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 0.0006072670249009593,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": -7.44974999581314e-05,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": -0.000307098843331171,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.0020393577473675076,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": -0.0021049698648139543,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": 0.0010567371193355246,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": -0.0007621296977006711,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": -0.0008278520782662399,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 0.0020964870610037014,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 4.018548479950747,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": -0.0017925594077904713,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": -0.0010105446123989015,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.0017189508137597327,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": 0.08876933012849965,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": 0.0024489390443924266,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 0.001617793360677868,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 0.0017845988797252487,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": 0.0009745248449621103,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": -0.0016465108234388695,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": -0.0018430009841360674,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.00027836368896305024,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": 0.001540305970139306,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": 0.06622068809899764,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": -0.00037801682345571134,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 0.0018912936478014297,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": -0.0007802769728657343,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 4.006175729767684,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.010566297881781374,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": -0.001351543407499154,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": 0.0019218273932323075,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": 0.00460906723595613,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": -0.0006533052846372153,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 0.00031491621330534934,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": -0.0017078763292066627,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": -0.00044955432226345535,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.000735985441265565,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.0035934504058075375,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": -0.0005661940238580607,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": 0.0007347919034574128,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.0018677762007816721,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": -0.00015644465789300895,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 0.0010925968119240804,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.016647352898945686,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 3.646029493463284,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.0868786213615994,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": 0.0034397721905472254,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": -0.0005774192756959708,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 0.014429498550324885,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": -0.000607419792866602,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": -0.0006838530939510238,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": 0.00392571299409821,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 6.816562376800672e-05,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.0031097248181361885,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": -0.0005229807851676653,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": 0.0003249917854832495,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.0006333522422368549,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 0.03516304295843273,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 0.0016139755981428863,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.0001782415083260345,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.11541542038109635,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 3.36214364603888,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": 0.004089728131293816,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": -0.0008890501134939713,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 0.0012402432266773891,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 0.05589926696751237,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": -0.0019024768259381486,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": 0.0008321975882447432,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.0020591505288646214,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.0014935868998532322,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": 7.192617121945282e-05,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": 0.0015699902706933946,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": -0.0006518619696267425,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": -0.0005126645851220721,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 0.09122235855744308,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.0008948046311279682,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.00034094442196601127,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.0007123034517810834,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": 3.9501086813182376,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": -0.00028456598052865374,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": -0.0018763001723641009,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": -0.0005341100665350404,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": 0.006709371065281927,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": -0.0002883067173601659,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.00041004572759292205,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.0009737320224068166,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": -0.00011110616700490978,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": 0.0010427998391157785,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.0005096396029852914,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 0.0026171082309395487,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 0.001340511015350161,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.004274963288034735,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.0015875261977528871,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": -0.0002249993271360869,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": -0.001061665630867395,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": 4.469418682185651,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": -0.0003423339758889107,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": -0.0013065750982017355,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": 0.001911742514275211,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": 0.010781070855474967,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": -0.0013960946102612303,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": -0.0016117390971957934,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": -0.0009349038675138292,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": 0.002430431016950787,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.0016274996597875967,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 0.0010943116217694193,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": -0.0009010664296263143,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.0004628874039181645,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.011438450805610343,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.0005781828417824204,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": -0.0013665945601745162,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": -0.0004194917740855178,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 3.69924674157564,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 0.07095666703843927,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": 0.0007822192722195699,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": 0.0018664491422860398,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.002111776158628368,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.0017964615005794209,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": 0.000852900877986129,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": -0.0011062711064810866,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": -0.0012144413422980535,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": -0.0012543618771714282,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 0.0016559261911668808,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 1.8889737244283757e-05,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": -0.001308722914515655,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.07575487864251557,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": -0.001462008697082281,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": -0.0008126072463834533,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 0.12788684143437132,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 3.2041685256242447,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": 0.035155630975076076,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": 0.00028461894044182136,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.0008992970028916046,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.07196352184979762,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": -0.0005275245483955983,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": 0.0016639160345158584,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.00047546862507851965,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 0.0002916802960923158,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 0.001815249927453895,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.00019853828685242574,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.00017433753751932755,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": -0.0008537949872904466,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": 0.002779730873025934,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": 0.0013029971700585156,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 0.0009693371321213051,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 0.012794012471725564,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": 4.088519976324154,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": -0.00014338301014655655,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.0019565504369207973,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": -0.0001967344403455309,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": 0.020362309384083406,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": -0.0011447649569865004,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.0006762586591610681,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": -0.0012996357357468883,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": -0.0001372787918370256,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": -0.0008412591826196532,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.001585060215709101,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.0014605176440513708,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": 2.9125186129520467e-05,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": 0.01979807463579453,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": -0.00033096780188502446,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 4.5021192394981186e-06,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": -0.0009394001904605976,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": 3.7234321588292385,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.11841517199219499,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": -0.0008113662962126393,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": -0.0003801947888002323,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": -0.0002718657618787297,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 8.112978667401772e-05,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": -0.0017650883544182258,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": -0.001506500073681194,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.00018489592144193902,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.001639864985101266,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.00019328172927513673,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": -0.0007149608929757191,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": -0.0005922777675818862,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 0.003979051548900862,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 0.000538854958285021,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": 0.00046653875704170706,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": 0.13524838217664753,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 3.5937648998931504,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.023807624287329413,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": 0.0019132176591413583,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": -0.0015458420453665618,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.0016895108396009393,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": -0.003062152947996558,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 0.0014719798492063784,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": 0.00158788306241769,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": 0.0023567954484543592,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.0007735951456766402,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": -0.0017025003086742457,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": -0.00048225307940204357,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 0.002325406582710275,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 0.049134557142052324,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": 0.0006059549217275345,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": -0.0004738457668283377,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.03557886377262802,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 3.389609926656987,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": 0.12813317527120588,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 0,
+      "condition_target_indices": [],
+      "bits": -0.0006515774298907263,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 1,
+      "condition_target_indices": [],
+      "bits": 0.00316849134677556,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 2,
+      "condition_target_indices": [],
+      "bits": 0.00021651606093043893,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 3,
+      "condition_target_indices": [],
+      "bits": 0.0011827478079516913,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 4,
+      "condition_target_indices": [],
+      "bits": -0.0015885928735722703,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 5,
+      "condition_target_indices": [],
+      "bits": -0.0008005246846980095,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "condition_target_indices": [],
+      "bits": 0.00010655293636003658,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 7,
+      "condition_target_indices": [],
+      "bits": -0.0010711916587753994,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 8,
+      "condition_target_indices": [],
+      "bits": 0.0009430425520169864,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 9,
+      "condition_target_indices": [],
+      "bits": 0.001503334642393832,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "condition_target_indices": [],
+      "bits": 4.624328685654909e-05,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 11,
+      "condition_target_indices": [],
+      "bits": 0.027233744349290937,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 12,
+      "condition_target_indices": [],
+      "bits": -0.001583389515965243,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 13,
+      "condition_target_indices": [],
+      "bits": 0.0008686165088769983,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 14,
+      "condition_target_indices": [],
+      "bits": 0.09193647161625818,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 15,
+      "condition_target_indices": [],
+      "bits": 3.66803475140575,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 4.3079623879854205,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 4.281461656213085,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 4.727060096059208,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 4.282562399205122,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 4.327206791902174,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 4.298273384035811,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 4.295479372387906,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 1,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": -0.0023380078485663804,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 2,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": -0.017631484316209232,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": 0.5835070055109787,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.10481988672378052,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.10455436284786178,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.1022499021879941,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.10784366956458379,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 5,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": -0.015488014723974576,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": 0.0023365184826402196,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.009248665724310899,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.005330110979598397,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.00771288554395238,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": -0.013868557357437998,
+      "removed": true
+    },
+    {
+      "source": 0,
+      "target": 13,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": -0.007466331361663355,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 0,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": -0.01768007457492674,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 4.64511264218914,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 4.12419876250829,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 4.137177405852805,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 4.099086811477721,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 4.095052481247109,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 4.112645453954748,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.7061986947691372,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.13459544442181207,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.14285949999793057,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.13145710294591723,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.11447561426857814,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.1293700130364887,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 7,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": -0.0012603443265906773,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.0014872089553516928,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.010216101095497684,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.00011167218014796303,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.0070682029491430905,
+      "removed": false
+    },
+    {
+      "source": 1,
+      "target": 8,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": -0.0012656640879497158,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 12,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": -0.009378504381656091,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 14,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": -0.014113857791689536,
+      "removed": true
+    },
+    {
+      "source": 1,
+      "target": 15,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": -0.008000947743439799,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.4882996131842735,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.17030212887581483,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.16441656390695616,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.16834868812621254,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.16939421592264467,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.17872169395966195,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.18265763633674076,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.16660342870200287,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.1697549472432085,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.17097057622156644,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 4.065464906513264,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 3.8792703424393955,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 3.8792421709570797,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 3.87844594405675,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 3.9319505226858644,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 3.8846914649986726,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 3.889677015084949,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 3.855635947003116,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 3.8553066640675646,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 3.8736135154949523,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.007579897547571735,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.029813103354916597,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 3,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": -0.008644982594356913,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": -0.009814826692522453,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.004097030703932229,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.006711345985536448,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.0030991992756714583,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.005372754796469132,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.009184264777838973,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.003759307734751932,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": -0.00836108615676358,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.03128527352866757,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.1371752557245603,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.02932159334704593,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.04230773279283795,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.030697638138182506,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.028962588815913723,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.0315061245871019,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.0024867100207643738,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.0021569172521865606,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 7,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.0016681918124883414,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.00822355210836795,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 8,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": -0.005820017424669211,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 10,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": -0.004412430897950101,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 13,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.0005997897039356544,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 13,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": -0.012658466639059548,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 15,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": -0.0022877277353418077,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.021681539077160583,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 2,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.002570263684440263,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 4.137419760903287,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 4.59936545009244,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 4.1786759381854335,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 4.134631176012358,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 4.142659890238839,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 4.166599625364762,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 4.148173611725971,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 4.152111782411719,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.005030762288077082,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.6478281898566424,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.13417360535713618,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.12624472063101005,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.12088637349712068,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.13261716995798753,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.13110033696123782,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.1321850810661823,
+      "removed": false
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.008531213082215413,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 9,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.01515170869969879,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 10,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.008354670148966528,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 11,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.0015313939609734842,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 14,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.00822875299683053,
+      "removed": true
+    },
+    {
+      "source": 3,
+      "target": 15,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.017726515077760654,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.1059619432297592,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.3932710554214633,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.11296013002782627,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.11001940450775335,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.1156971898034194,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.11827357208724118,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.09812182722742863,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.11047540675161725,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 2,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": -0.0064445611116609545,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": 4.308915080617089,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 4.166161238835492,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 4.130044819449608,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 4.13625477554737,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 4.104270816545003,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 4.131032961094155,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 4.11339521256724,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": 0.01997740816411766,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.09514423368096472,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.026534191488180838,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.031332148433545384,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.023774286031788893,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.014028771306300284,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.029172349446209292,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": -0.006510277311404727,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": 0.016762609425568394,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.04597180660446322,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.02567276895763295,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.017269336653975245,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.016715334405476664,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.025251841438623326,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 10,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": 0.007689093112615516,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 10,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": -0.005773285928558253,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 13,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": -0.016407022023980058,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 14,
+      "condition_target_indices": [
+        0
+      ],
+      "bits": -0.00025375728391579297,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.002263793748268798,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.0032111639704974116,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.020947901833326735,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.015089863708940544,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 0,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.0099846725545839,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 1,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.0030702615738097453,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 3,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.005411994180802783,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 3,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.008595174200172204,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.07469155997878724,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.02075260272957863,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.018624473867864942,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.017697864578745278,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.03680335703474902,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.030017368812788867,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.027456344397664822,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 3.820631787541385,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 4.1182244816027325,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 3.790133115772649,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 3.8179670014333325,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 3.795222988090382,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 3.796601838779132,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 3.778070976956105,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.09804709997225788,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.48628368507615627,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.0971273653051571,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.09912580678640544,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.10330432511785168,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.09987272066535732,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.09247702235967276,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 7,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": -0.0056254107954992,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.016057089984728417,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.08189760575011017,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.017449407964936613,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.024128850006215972,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.03323172083798544,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.021593037371779106,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 12,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.011362085548376148,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 12,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.005379234317740152,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 13,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 8.60609059691685e-05,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 13,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.0026004336666901485,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 14,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.0014713773987036136,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 14,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.008612411790340292,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.0033865811410646145,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.011594290744032815,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.008299643292841675,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 0,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": -0.0031923140267389963,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 1,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.04678554978178838,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 1,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.007970068930183895,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.03943888027325382,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.05849238948883295,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.04289721897115817,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.10404342444846511,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.04006723610672028,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.03858826055845501,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.029612965904181082,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.04716550713554537,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.05969434218446569,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.06427944157772342,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.0425501178918953,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 3,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": -0.007212056310051549,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 4,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.009179854846827904,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 4,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.023825734632531216,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 4,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.008917810108118892,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.15313178341630415,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.3038139602730484,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.15084106479587706,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.16102681502955543,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.144529991177509,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.14425280655979789,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.15864535327798765,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.1649790626288151,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.17923547444715873,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 3.5431411589255752,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 3.5894207831997966,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 3.5257794785397287,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 3.5225530898014776,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 3.622467535003711,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 3.514322389453295,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 3.5134081770676335,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 3.5255881862013396,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 3.5117432790527223,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.0013525304603125765,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.004896834467003324,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.02012089136103987,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.016552205490746763,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.008100159882142204,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.005591452746741665,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.014997949155013188,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.01149273314928314,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.0219287149378615,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 9,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": -0.01089314385222996,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.04824956083229352,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.05133447743768257,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.19648329954229415,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.05997401486005771,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.0642696915345434,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.052644598329269716,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.08270162875982093,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.0706077115410849,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 12,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": -0.0013710819988126985,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.010828995091208948,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.006268565895493295,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.0031719590961178474,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.015051915508919609,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.01156375272297705,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.00554384357603068,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 14,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": -0.0011651495305162439,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 15,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": -0.009532355584546228,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 0,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.002620565265068767,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.13719714315715312,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.12681566995646132,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.1386476800339932,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.5645597714421494,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.13452613224538448,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.1424874746059059,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.12495900671051091,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 4,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.0013488692546462287,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 5,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.010563156223101755,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.00397775033028116,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.02042301664493714,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.002115716174692339,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.012795827460104619,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.003828723893823366,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 4.393208131059646,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 4.0755970946454845,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 4.095336485507099,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 4.082907283963892,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 4.057057335339429,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.009065648296837548,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.010823735084262726,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.0346636803569887,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.024640532890056018,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.018495288380251763,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 13,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.00012947962717288218,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 14,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.015646063063171473,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 0,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.0044815426216476065,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 0,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.004765627603116063,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 0,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.00016753316576706306,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 0,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.00012659350958068924,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 0,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.00452117375228059,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 0,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": -0.012764527564975444,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 1,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": -0.005494394025080565,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 2,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": -0.010277278262667527,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 3,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.004591901737031832,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 3,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.003590774021281131,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 4,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.0189417567223096,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 4,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.06055809643388353,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 4,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.010908975462490264,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 4,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": -0.005866649054406109,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 5,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": -0.006464525933924214,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 8,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 4.541624197775493,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 8,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 4.688837835800302,
+      "removed": false
+    },
+    {
+      "source": 8,
+      "target": 11,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": -0.0053982388951350005,
+      "removed": true
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.24024736680973185,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 0,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": 0.0021802058656771673,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 0,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.0015056510145032027,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 0,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.0007800215979906551,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 0,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.00564054801055712,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 1,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": 0.004533137025642498,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 1,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": -0.0013211967435281054,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 2,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": -0.004298491667686841,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 4,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.00030827963358550677,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.03194123076926197,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.09628059769034636,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.015644426901685257,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.020470162393985206,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.018548974457273073,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.02673995277345935,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.019174180390740213,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.020266315149187395,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 6,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.011833276116400714,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 6,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.024822378206362187,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 6,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.031959360157926005,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 6,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": -0.006457076831212759,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 3.887759854843579,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 4.182340470916275,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 3.8721129098816154,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 3.8525042231846545,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 3.852109684765307,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 3.870430918617655,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 3.855702320930273,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.0743479323955612,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.458814439945165,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.09623462812062109,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.09152893512444091,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.08094418140320267,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.09621404438051058,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.08197744278471325,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 11,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.004047154901008792,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 12,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.0017938699816918101,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.008309325610772566,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.02775121473774684,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.001440088291490875,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.006649462798580373,
+      "removed": false
+    },
+    {
+      "source": 9,
+      "target": 13,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": -0.0021407534144084993,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 14,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.0007246571559246381,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 15,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.000978183531948945,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 3,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": -0.00041898566877890864,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 4,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.004741396564890763,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 4,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": -0.012584933522025485,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.08060207857559148,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.17397812190682585,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.08525729737656644,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.08892459978018499,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.09194876946312223,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.10093661527408099,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.1543339016782654,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.2592931772231418,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.16417042458927003,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.17166400548556113,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.17554115048410637,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.16255371075301697,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 3.40789011968248,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 3.3781944251670626,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 3.3689217855133737,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 3.3449382008364856,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 3.351534681719967,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 3.414352735482831,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.05672807309337098,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.054595344875700676,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.10819816186149842,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.05257994747402049,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.04877639518695326,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.05532992922735074,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 12,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.006868988973005302,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 13,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.0021528596883412824,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.0935340267014678,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.07537144786748187,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.1631533122111155,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.07604457170899194,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 0,
+      "condition_target_indices": [
+        1
+      ],
+      "bits": -0.009738924263902271,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 1,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": -0.005437998572761657,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 2,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.006747803579883703,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 2,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.005461704534679303,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 2,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.0007781617322729745,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 3,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.005469578995955335,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 3,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.02126141022670335,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 3,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.0012976206422261917,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 3,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.004387201579662135,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 3,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.0059708097816149825,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 3,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.0030250289582892265,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 3,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": -0.01461885033466947,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 4,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.011510449271637564,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 5,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.009466363133836095,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 5,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": -0.0018586623169452945,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 7,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.013821417299267828,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 7,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.011557618396766351,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 7,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.014277508203368882,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 7,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.042629497594131524,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 7,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.01694973516441166,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 7,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.007596741841262682,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 8,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.002105530815118247,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 8,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": -0.0018700601649222772,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 9,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": -0.0005920620325435268,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.02519276789313038,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.15486214378126115,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.027390167380300468,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.015123197369237342,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 11,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 4.232490077928937,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 11,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 4.292072782488538,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 11,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 4.208306220302616,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 11,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 4.2983363824341945,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.006277254153111282,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.005421757612164408,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 13,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": -0.013352724159323854,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": 0.02859741873552741,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.024276514214491493,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.15765977331422104,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 1,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.0008989477779417242,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 5,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.002639299596034811,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 6,
+      "condition_target_indices": [
+        7
+      ],
+      "bits": -0.0003126679897292178,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 7,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": -0.007093694293307493,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 8,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.0343863423615064,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 8,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.16613621587242178,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 8,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.0515755474195586,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 10,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": -0.009505041880804505,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 12,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 3.9459656799058602,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 12,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 4.289390734049283,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.1549420120194731,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.6155504996623556,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 1,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.022828718297980916,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 1,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": -0.013082067381126435,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 4,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.008386895117219588,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 4,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.007150875745248112,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 4,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.010824399281915732,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 4,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 6.125365507758605e-06,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 4,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": -0.014713220237577493,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 5,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.008618881948589877,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 6,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.00016072826007039185,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 6,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": -0.0005205840357237161,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 9,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.008819725334328454,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 9,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.0061889663942555845,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 9,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.003766890796429585,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 9,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.029275872259956825,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 9,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.004513214597593504,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 9,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.005767960749906117,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 10,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.0018009949795434036,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 10,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": -0.001348911205365314,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 11,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": -0.006367098585306526,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 12,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.17458567418620366,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 12,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.5166051369298608,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 12,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.16731577737559616,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 12,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.17809751083829847,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 13,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 3.7332976394508925,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 13,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 3.9729607573602235,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 13,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 3.8164881733061997,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 13,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 3.7525165572347103,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.026681291444995266,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "condition_target_indices": [
+        12
+      ],
+      "bits": 0.016640410465666812,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.13697801743835392,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.043303243805980475,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 15,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": -0.0008259746915993421,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 1,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.004045393166746396,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 1,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.011341371523425904,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 1,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.002490784924880649,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 1,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.0020370359140857845,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 1,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": -0.002194301094178975,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 3,
+      "condition_target_indices": [
+        4
+      ],
+      "bits": 0.00521463239968309,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 3,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.006063981065337225,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 3,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.005870327332590816,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 4,
+      "condition_target_indices": [
+        5
+      ],
+      "bits": 0.007264364703065981,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 4,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.0048460087068782675,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 4,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": -0.0010081024176499284,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 5,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.0019131887438375967,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.0005912158659698122,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.016600227329634135,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.0015434055413160908,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.000785494528088338,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.007562289225873051,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.013792413222247182,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 9,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.0017342385165972827,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 10,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.07589042946282311,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 10,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.07878412829237819,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 10,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.05983888371613304,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 10,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.1772356448575837,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 10,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.04989513882664908,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 11,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.0010155976200610908,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 13,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.046130368094183354,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 13,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.051676751384806964,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 13,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.1297034382148594,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 13,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.05226725225629632,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 3.5307397463348043,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 3.628067233598059,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 3.579069469352042,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 3.6372238844656875,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.18783405961793195,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.15940942417940238,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.17218211578747156,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.35573478271853026,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 1,
+      "condition_target_indices": [
+        2
+      ],
+      "bits": -0.00022033784788032414,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 2,
+      "condition_target_indices": [
+        3
+      ],
+      "bits": 0.009698013839802502,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 2,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": 0.0012114334230842482,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 2,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.006034820237465414,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 2,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.015321444572174974,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 2,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": -3.8473292967028264e-05,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 3,
+      "condition_target_indices": [
+        6
+      ],
+      "bits": -0.006699913667782113,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.003629549017830142,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": -0.003412572151875316,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 8,
+      "condition_target_indices": [
+        9
+      ],
+      "bits": 0.011242202465903286,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 8,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 8.937495546503912e-05,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 8,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.0051049012303873735,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 8,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.002808608765376055,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 8,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.0075076691493055825,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 8,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 7.460862305615901e-05,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 9,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.014074825889874083,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 9,
+      "condition_target_indices": [
+        10
+      ],
+      "bits": 0.00694496569519408,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 9,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.004308899061397842,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 9,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.008889483398556247,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 9,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": -0.0012451920202571302,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.0007400619695906743,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": -0.0036290637734702953,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 11,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.05097658762842014,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 11,
+      "condition_target_indices": [
+        13
+      ],
+      "bits": 0.04298691937895942,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 11,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 0.041894596972393325,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 11,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.1739952749941432,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 13,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.003229229606767284,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 13,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": -0.0010716628592998389,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 14,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 0.1233939628080073,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 14,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 0.11284741420430953,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 14,
+      "condition_target_indices": [
+        15
+      ],
+      "bits": 0.5537142248000418,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 15,
+      "condition_target_indices": [
+        8
+      ],
+      "bits": 3.841959037706735,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 15,
+      "condition_target_indices": [
+        11
+      ],
+      "bits": 3.901710305789634,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 15,
+      "condition_target_indices": [
+        14
+      ],
+      "bits": 4.214846359169838,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "condition_target_indices": [
+        4,
+        8
+      ],
+      "bits": 3.1742169689180333,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "condition_target_indices": [
+        0,
+        8
+      ],
+      "bits": 0.07926599943249052,
+      "removed": false
+    },
+    {
+      "source": 0,
+      "target": 8,
+      "condition_target_indices": [
+        0,
+        4
+      ],
+      "bits": -0.017704588799323753,
+      "removed": true
+    },
+    {
+      "source": 2,
+      "target": 1,
+      "condition_target_indices": [
+        2,
+        6
+      ],
+      "bits": 0.12186740827477804,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 2,
+      "condition_target_indices": [
+        1,
+        6
+      ],
+      "bits": 2.979465401518443,
+      "removed": false
+    },
+    {
+      "source": 2,
+      "target": 6,
+      "condition_target_indices": [
+        1,
+        2
+      ],
+      "bits": 0.026501679823979156,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        4,
+        5
+      ],
+      "bits": 0.05674548073956979,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        4,
+        8
+      ],
+      "bits": 0.05980946453728392,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 0,
+      "condition_target_indices": [
+        5,
+        8
+      ],
+      "bits": 0.02509720263168268,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        0,
+        5
+      ],
+      "bits": 3.090618766303717,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        0,
+        8
+      ],
+      "bits": 3.099176112413403,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "condition_target_indices": [
+        5,
+        8
+      ],
+      "bits": 3.0965528218256115,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        0,
+        4
+      ],
+      "bits": 0.0011005454702432225,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        0,
+        8
+      ],
+      "bits": 0.01284622997708751,
+      "removed": false
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "condition_target_indices": [
+        4,
+        8
+      ],
+      "bits": -0.0014605044475719268,
+      "removed": true
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "condition_target_indices": [
+        0,
+        4
+      ],
+      "bits": -0.011489970444110247,
+      "removed": true
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        5,
+        6
+      ],
+      "bits": 0.0005937475785197858,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        5,
+        9
+      ],
+      "bits": 0.007534430637247844,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 4,
+      "condition_target_indices": [
+        6,
+        9
+      ],
+      "bits": 0.006706402995530344,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        4,
+        6
+      ],
+      "bits": 2.999577548040736,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        4,
+        9
+      ],
+      "bits": 2.961615123521162,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "condition_target_indices": [
+        6,
+        9
+      ],
+      "bits": 2.991998695156958,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        4,
+        5
+      ],
+      "bits": 0.12334521348215752,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        4,
+        9
+      ],
+      "bits": 0.046431948597703165,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "condition_target_indices": [
+        5,
+        9
+      ],
+      "bits": 0.1351448142457538,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [
+        4,
+        5
+      ],
+      "bits": 0.006918357051610214,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [
+        4,
+        6
+      ],
+      "bits": 0.00029236942032307507,
+      "removed": false
+    },
+    {
+      "source": 5,
+      "target": 9,
+      "condition_target_indices": [
+        5,
+        6
+      ],
+      "bits": 0.010744392245421114,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        5,
+        6
+      ],
+      "bits": 0.027862920517106884,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        5,
+        7
+      ],
+      "bits": 0.014639553380064693,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        5,
+        10
+      ],
+      "bits": 0.01509736405150068,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        6,
+        7
+      ],
+      "bits": 0.023016227611759116,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        6,
+        10
+      ],
+      "bits": 0.018623151638732096,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "condition_target_indices": [
+        7,
+        10
+      ],
+      "bits": 0.009257694214896608,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        2,
+        6
+      ],
+      "bits": 0.11339062651890962,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        2,
+        7
+      ],
+      "bits": 0.061958116753493414,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        2,
+        10
+      ],
+      "bits": 0.06385074506902272,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        6,
+        7
+      ],
+      "bits": 0.10312987440814958,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        6,
+        10
+      ],
+      "bits": 0.1297829556735702,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 5,
+      "condition_target_indices": [
+        7,
+        10
+      ],
+      "bits": 0.059145413633048906,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        2,
+        5
+      ],
+      "bits": 2.8211355521112167,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        2,
+        7
+      ],
+      "bits": 2.8347133136804894,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        2,
+        10
+      ],
+      "bits": 2.824910507024719,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        5,
+        7
+      ],
+      "bits": 2.8213819949610905,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        5,
+        10
+      ],
+      "bits": 2.851390622868529,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "condition_target_indices": [
+        7,
+        10
+      ],
+      "bits": 2.833038207518232,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "condition_target_indices": [
+        2,
+        5
+      ],
+      "bits": -0.0037158422177804495,
+      "removed": true
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        2,
+        5
+      ],
+      "bits": 0.025404909926136542,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        2,
+        6
+      ],
+      "bits": 0.05813442988866102,
+      "removed": false
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "condition_target_indices": [
+        5,
+        6
+      ],
+      "bits": 0.08096650743114903,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        6,
+        7
+      ],
+      "bits": 0.08505042351873282,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        6,
+        11
+      ],
+      "bits": 0.02079096787458739,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "condition_target_indices": [
+        7,
+        11
+      ],
+      "bits": 0.1003297301399609,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "condition_target_indices": [
+        3,
+        7
+      ],
+      "bits": -0.02037635135678035,
+      "removed": true
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "condition_target_indices": [
+        3,
+        11
+      ],
+      "bits": 3.0832067099615714,
+      "removed": false
+    },
+    {
+      "source": 7,
+      "target": 11,
+      "condition_target_indices": [
+        3,
+        7
+      ],
+      "bits": -0.012125698261170213,
+      "removed": true
+    },
+    {
+      "source": 9,
+      "target": 5,
+      "condition_target_indices": [
+        9,
+        10
+      ],
+      "bits": -0.004099815473124814,
+      "removed": true
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        9,
+        10
+      ],
+      "bits": 0.07280171437675247,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        9,
+        11
+      ],
+      "bits": 0.026215494901655746,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        9,
+        14
+      ],
+      "bits": 0.036270804465029866,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        10,
+        11
+      ],
+      "bits": 0.06545253625389656,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        10,
+        14
+      ],
+      "bits": 0.07021105575992528,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "condition_target_indices": [
+        11,
+        14
+      ],
+      "bits": 0.038803959030778504,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        6,
+        10
+      ],
+      "bits": 0.09840776873905493,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        6,
+        11
+      ],
+      "bits": 0.05309416670010885,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        6,
+        14
+      ],
+      "bits": 0.0489028046457299,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        10,
+        11
+      ],
+      "bits": 0.10514312871293448,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        10,
+        14
+      ],
+      "bits": 0.10314667342049327,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 9,
+      "condition_target_indices": [
+        11,
+        14
+      ],
+      "bits": 0.05580962953463351,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        6,
+        9
+      ],
+      "bits": 2.697349590419168,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        6,
+        11
+      ],
+      "bits": 2.7043239842021087,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        6,
+        14
+      ],
+      "bits": 2.7072192454614643,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        9,
+        11
+      ],
+      "bits": 2.6999847650671067,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        9,
+        14
+      ],
+      "bits": 2.707061726353192,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "condition_target_indices": [
+        11,
+        14
+      ],
+      "bits": 2.7183982324388056,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        6,
+        9
+      ],
+      "bits": 0.004301873893878875,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        6,
+        10
+      ],
+      "bits": 0.02594521216036512,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        6,
+        14
+      ],
+      "bits": 0.007052462985274365,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        9,
+        10
+      ],
+      "bits": 0.034135180567465256,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        9,
+        14
+      ],
+      "bits": 0.004217798616887155,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "condition_target_indices": [
+        10,
+        14
+      ],
+      "bits": 0.01638147423533815,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        6,
+        9
+      ],
+      "bits": 0.031179186847084695,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        6,
+        10
+      ],
+      "bits": 0.0653582743241472,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        6,
+        11
+      ],
+      "bits": 0.034498381671079374,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        9,
+        10
+      ],
+      "bits": 0.06563691979426678,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        9,
+        11
+      ],
+      "bits": 0.02548022361825881,
+      "removed": false
+    },
+    {
+      "source": 10,
+      "target": 14,
+      "condition_target_indices": [
+        10,
+        11
+      ],
+      "bits": 0.05490109477954302,
+      "removed": false
+    },
+    {
+      "source": 11,
+      "target": 7,
+      "condition_target_indices": [
+        10,
+        11
+      ],
+      "bits": -0.012062392449752322,
+      "removed": true
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "condition_target_indices": [
+        11,
+        15
+      ],
+      "bits": -0.00419436793198882,
+      "removed": true
+    },
+    {
+      "source": 12,
+      "target": 8,
+      "condition_target_indices": [
+        12,
+        13
+      ],
+      "bits": 0.02546521452852753,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 12,
+      "condition_target_indices": [
+        8,
+        13
+      ],
+      "bits": 3.0537869091080054,
+      "removed": false
+    },
+    {
+      "source": 12,
+      "target": 13,
+      "condition_target_indices": [
+        8,
+        12
+      ],
+      "bits": 0.16573128554711145,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 9,
+      "condition_target_indices": [
+        12,
+        13
+      ],
+      "bits": -0.008094296437710305,
+      "removed": true
+    },
+    {
+      "source": 13,
+      "target": 12,
+      "condition_target_indices": [
+        13,
+        14
+      ],
+      "bits": 0.13961011262520429,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 13,
+      "condition_target_indices": [
+        12,
+        14
+      ],
+      "bits": 2.945548847977815,
+      "removed": false
+    },
+    {
+      "source": 13,
+      "target": 14,
+      "condition_target_indices": [
+        12,
+        13
+      ],
+      "bits": 0.020503580242219262,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "condition_target_indices": [
+        10,
+        13
+      ],
+      "bits": -0.01237778501909456,
+      "removed": true
+    },
+    {
+      "source": 14,
+      "target": 10,
+      "condition_target_indices": [
+        13,
+        14
+      ],
+      "bits": 0.05601349856630273,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 10,
+      "condition_target_indices": [
+        13,
+        15
+      ],
+      "bits": 0.019559314406212346,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 10,
+      "condition_target_indices": [
+        14,
+        15
+      ],
+      "bits": 0.06421785836070151,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 13,
+      "condition_target_indices": [
+        10,
+        14
+      ],
+      "bits": 0.03116180275127306,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 13,
+      "condition_target_indices": [
+        10,
+        15
+      ],
+      "bits": 0.007323492496522481,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 13,
+      "condition_target_indices": [
+        14,
+        15
+      ],
+      "bits": 0.03222519902356047,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "condition_target_indices": [
+        10,
+        13
+      ],
+      "bits": 2.8320360083323943,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "condition_target_indices": [
+        10,
+        15
+      ],
+      "bits": 2.8433228119161624,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "condition_target_indices": [
+        13,
+        15
+      ],
+      "bits": 2.8289158912936587,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "condition_target_indices": [
+        10,
+        13
+      ],
+      "bits": 0.05285979464943648,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "condition_target_indices": [
+        10,
+        14
+      ],
+      "bits": 0.11958488168528243,
+      "removed": false
+    },
+    {
+      "source": 14,
+      "target": 15,
+      "condition_target_indices": [
+        13,
+        14
+      ],
+      "bits": 0.1088215570510483,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 8,
+      "condition_target_indices": [
+        11,
+        14
+      ],
+      "bits": -0.002330238682248621,
+      "removed": true
+    },
+    {
+      "source": 15,
+      "target": 11,
+      "condition_target_indices": [
+        14,
+        15
+      ],
+      "bits": 0.02233452598924831,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 14,
+      "condition_target_indices": [
+        11,
+        15
+      ],
+      "bits": 0.1447626751878747,
+      "removed": false
+    },
+    {
+      "source": 15,
+      "target": 15,
+      "condition_target_indices": [
+        11,
+        14
+      ],
+      "bits": 3.0221424765418607,
+      "removed": false
+    }
+  ],
+  "traversal": "Sorted source/target/conditioning indices; immediate deletions; stop after order without deletion"
+}

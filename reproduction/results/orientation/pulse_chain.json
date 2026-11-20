@@ -1,0 +1,463 @@
+{
+  "edge_comparison": [
+    {
+      "edge": [
+        "Omega_0",
+        "F_0"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_0",
+        "F_1"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Omega_1",
+        "F_1"
+      ],
+      "status": "collider_agrees"
+    },
+    {
+      "edge": [
+        "Omega_2",
+        "F_2"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_3",
+        "F_3"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_4",
+        "F_4"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_5",
+        "F_5"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_6",
+        "F_6"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_6",
+        "F_7"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Omega_7",
+        "F_7"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_0",
+        "f_0"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_0",
+        "f_1"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_1",
+        "f_0"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_1",
+        "f_1"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_2",
+        "f_2"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_3",
+        "f_3"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_3",
+        "f_4"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_4",
+        "f_3"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_4",
+        "f_4"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_4",
+        "f_5"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_5",
+        "f_4"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_5",
+        "f_5"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_6",
+        "f_6"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_6",
+        "f_7"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_7",
+        "f_6"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "Phi_7",
+        "f_7"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "f_0",
+        "omega_d_0"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_0",
+        "omega_d_1"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_1",
+        "omega_d_0"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_1",
+        "omega_d_1"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_2",
+        "omega_d_2"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_3",
+        "omega_d_3"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_3",
+        "omega_d_4"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_4",
+        "omega_d_3"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_4",
+        "omega_d_4"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_4",
+        "omega_d_5"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_5",
+        "omega_d_4"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_5",
+        "omega_d_5"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_6",
+        "omega_d_6"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_6",
+        "omega_d_7"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_7",
+        "omega_d_6"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_7",
+        "omega_d_7"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_0",
+        "F_0"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_0",
+        "F_1"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_1",
+        "F_0"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_1",
+        "F_1"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_2",
+        "F_2"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "omega_d_3",
+        "F_3"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_3",
+        "F_4"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_4",
+        "F_3"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_4",
+        "F_4"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_4",
+        "F_5"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_5",
+        "F_5"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_6",
+        "F_6"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_6",
+        "F_7"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_7",
+        "F_6"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_7",
+        "F_7"
+      ],
+      "status": "absent"
+    }
+  ],
+  "joint_arrows": [
+    [
+      "Omega_1",
+      "F_1",
+      "collider"
+    ],
+    [
+      "F_0",
+      "F_1",
+      "collider"
+    ]
+  ],
+  "ambiguous_triples": [
+    [
+      "Omega_0",
+      "F_0",
+      "F_1"
+    ],
+    [
+      "omega_d_2",
+      "F_2",
+      "Omega_2"
+    ],
+    [
+      "Omega_3",
+      "F_3",
+      "F_4"
+    ],
+    [
+      "Omega_4",
+      "F_4",
+      "F_3"
+    ],
+    [
+      "Omega_4",
+      "F_4",
+      "F_5"
+    ],
+    [
+      "F_3",
+      "F_4",
+      "F_5"
+    ],
+    [
+      "Omega_5",
+      "F_5",
+      "F_4"
+    ],
+    [
+      "Omega_6",
+      "F_6",
+      "F_7"
+    ],
+    [
+      "Omega_7",
+      "F_7",
+      "F_6"
+    ]
+  ],
+  "CMI(Omega1,F0|F1)_bits": 0.02007568765597697
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "causal-q-flux-robustness-score-cell-v1",
+  "provenance": {
+    "source_sha256": {
+      "flux_robustness_scores.py": "6f1fa06cf38c110f49a85d9db38ad3298bdce9573f0fa74fc21f29433c504197",
+      "flux_detection_scan.py": "119b48f7d13e36f39661f9e085999843dec3c87c363daed921940f24f9875544",
+      "flux_robustness_acceleration.py": "7406809a2970a204a8a591f0f096a50a159747d19df6c37a88b26e398ef06469"
+    },
+    "input_sha256": "27b54b4f27830cab9f7ab0cdf07680ac139c57ec4637998a9ade6fac23d100e1",
+    "repeat": 2,
+    "case": "four",
+    "condition": "iid",
+    "sample_count": 20000,
+    "k": [
+      30
+    ],
+    "estimator_seed": 43,
+    "marginal_counter": "ordered_sweep"
+  },
+  "sample_seed": 2026111802,
+  "repeat": 2,
+  "case": "four",
+  "condition": "iid",
+  "sample_count": 20000,
+  "pairs": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      3
+    ]
+  ],
+  "coupling_strengths": [
+    0.001,
+    0.02,
+    0.014,
+    0.016,
+    0.008,
+    0.018
+  ],
+  "weak_pairs": [],
+  "by_k": {
+    "30": {
+      "average_precision": null,
+      "spearman_all": 1.0,
+      "spearman_nonzero": 1.0,
+      "raw_mean_bits": 0.035879650410883084,
+      "raw_p90_bits": 0.07368893443519535,
+      "weak_mean_bits": null,
+      "scores_bits": [
+        -0.002363579798474316,
+        0.08698694889224268,
+        0.02264286957487321,
+        0.0447663520171068,
+        0.0028543918014021234,
+        0.06039091997814803
+      ]
+    }
+  },
+  "dcor": null,
+  "elapsed_seconds": 4.271330208517611
+}

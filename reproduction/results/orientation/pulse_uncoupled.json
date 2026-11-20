@@ -1,0 +1,313 @@
+{
+  "edge_comparison": [
+    {
+      "edge": [
+        "Omega_0",
+        "F_0"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_1",
+        "F_1"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_2",
+        "F_2"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_3",
+        "F_3"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_4",
+        "F_4"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_5",
+        "F_5"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_6",
+        "F_6"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Omega_7",
+        "F_7"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_0",
+        "f_0"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_1",
+        "f_1"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_2",
+        "f_2"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_3",
+        "f_3"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_4",
+        "f_4"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_5",
+        "f_5"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_6",
+        "f_6"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "Phi_7",
+        "f_7"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "f_0",
+        "omega_d_0"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_1",
+        "omega_d_1"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_2",
+        "omega_d_2"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_3",
+        "omega_d_3"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_4",
+        "omega_d_4"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_5",
+        "omega_d_5"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_6",
+        "omega_d_6"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "f_7",
+        "omega_d_7"
+      ],
+      "status": "absent"
+    },
+    {
+      "edge": [
+        "omega_d_0",
+        "F_0"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "omega_d_1",
+        "F_1"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "omega_d_2",
+        "F_2"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "omega_d_3",
+        "F_3"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "omega_d_4",
+        "F_4"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "omega_d_5",
+        "F_5"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "omega_d_6",
+        "F_6"
+      ],
+      "status": "unoriented"
+    },
+    {
+      "edge": [
+        "omega_d_7",
+        "F_7"
+      ],
+      "status": "unoriented"
+    }
+  ],
+  "joint_arrows": [],
+  "ambiguous_triples": [
+    [
+      "omega_d_0",
+      "F_0",
+      "Omega_0"
+    ],
+    [
+      "omega_d_1",
+      "F_1",
+      "Omega_1"
+    ],
+    [
+      "omega_d_2",
+      "F_2",
+      "Omega_2"
+    ],
+    [
+      "omega_d_3",
+      "F_3",
+      "Omega_3"
+    ],
+    [
+      "omega_d_4",
+      "F_4",
+      "Omega_4"
+    ],
+    [
+      "omega_d_5",
+      "F_5",
+      "Omega_5"
+    ],
+    [
+      "omega_d_6",
+      "F_6",
+      "Omega_6"
+    ],
+    [
+      "omega_d_7",
+      "F_7",
+      "Omega_7"
+    ]
+  ],
+  "ambiguous_drive_amplitude_pairs": [
+    {
+      "qubit": 0,
+      "mi_bits": 0.0015037270506159022,
+      "cmi_given_F_bits": 0.007772932834973583
+    },
+    {
+      "qubit": 1,
+      "mi_bits": 0.0008521524673642866,
+      "cmi_given_F_bits": 0.005639594943225109
+    },
+    {
+      "qubit": 2,
+      "mi_bits": -0.0051899220024598635,
+      "cmi_given_F_bits": 0.005136856908858415
+    },
+    {
+      "qubit": 3,
+      "mi_bits": 0.001930727859152005,
+      "cmi_given_F_bits": 0.00705531925434219
+    },
+    {
+      "qubit": 4,
+      "mi_bits": -0.002553000109363994,
+      "cmi_given_F_bits": 0.007967749245211604
+    },
+    {
+      "qubit": 5,
+      "mi_bits": -0.0004915040885394497,
+      "cmi_given_F_bits": 0.006549679646148021
+    },
+    {
+      "qubit": 6,
+      "mi_bits": 0.0003034585376903458,
+      "cmi_given_F_bits": 0.008563562867222705
+    },
+    {
+      "qubit": 7,
+      "mi_bits": -0.00398833045112623,
+      "cmi_given_F_bits": 0.015320340718969601
+    }
+  ]
+}

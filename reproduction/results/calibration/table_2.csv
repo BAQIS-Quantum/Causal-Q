@@ -1,0 +1,6 @@
+case,cohort,support,mean_list,coverage_pct,random_pct,planned_batches,all_pass_pct,batches_with_retries
+uncoupled,primary,graph,1.0,100.0,100.0,1.0,100.0,1.0
+chain,primary,graph,2.25,92.1875,26.953125,3.0,79.1666666666667,3.76388888888889
+dense,primary,graph,6.875,52.34375,50.27157738095238,8.0,100.0,8.0
+chain,validation,graph,2.25,91.40625,,3.0,57.291666666666686,4.565972222222223
+chain,validation,audited,2.5,96.875,,3.0,100.0,3.0
