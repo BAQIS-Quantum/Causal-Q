@@ -1,0 +1,4 @@
+frequency_model,four_all_r_s,sparse_coupled_r_s,sparse_all_r_s
+scalar,1.0000,0.9165,0.4777
+exact_bare,1.0000,0.9139,0.4184
+exact_transmon,1.0000,0.8557,0.3648

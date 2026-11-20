@@ -1,0 +1,8 @@
+case,screened,collider_agrees,collider_opposes,unoriented,absent
+four,16,0,0,5,11
+nn4,45,0,0,16,29
+nn8,61,6,0,13,42
+dense,91,18,0,7,66
+pulse_uncoupled,32,0,0,24,8
+pulse_chain,57,1,0,16,40
+pulse_dense,82,8,0,11,63

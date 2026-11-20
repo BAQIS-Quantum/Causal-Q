@@ -1,0 +1,63 @@
+{
+  "schema": "causal-q-flux-robustness-samples-v1",
+  "device_seed": 43,
+  "phase_std": 0.25,
+  "rho_correlated": 0.3,
+  "frequency_noise_std_ghz": 0.0005,
+  "frequency_solver": "Fig. 2 and 3 scalar self-consistent approximation",
+  "null_response": "All couplings zero, dressed frequency equals bare response",
+  "cases": {
+    "four": [
+      "figure2_flux",
+      20000,
+      4
+    ],
+    "nn4": [
+      "figure3_nn4",
+      20000,
+      16
+    ],
+    "nn8": [
+      "figure3_nn8",
+      40000,
+      16
+    ],
+    "dense": [
+      "figure3_dense",
+      40000,
+      16
+    ]
+  },
+  "numpy_version": "1.26.4",
+  "datasets": [
+    {
+      "file": "repeat_00.npz",
+      "sample_seed": 2026111800,
+      "sha256": "227d8406f59005bc5661c884bd9d485a1de952376433bc9bbcbc91baa3879510"
+    },
+    {
+      "file": "repeat_01.npz",
+      "sample_seed": 2026111801,
+      "sha256": "cbe37ae06e90411012c6ff8958c4e6344b29ffbaee439b93be7820d2baf25ec4"
+    },
+    {
+      "file": "repeat_02.npz",
+      "sample_seed": 2026111802,
+      "sha256": "27b54b4f27830cab9f7ab0cdf07680ac139c57ec4637998a9ade6fac23d100e1"
+    },
+    {
+      "file": "repeat_03.npz",
+      "sample_seed": 2026111803,
+      "sha256": "943ab03f9c90474f6dd933881974edf7948e54cb2de9ce580690194aca619fac"
+    },
+    {
+      "file": "repeat_04.npz",
+      "sample_seed": 2026111804,
+      "sha256": "69e15566f801378b9d853dd34ef73a7af6486473705bf31d963f5d5f92ecb9c7"
+    }
+  ],
+  "source_sha256": {
+    "scripts/generate_flux_robustness.py": "13dc1cf20adc81ffc9972f74915fddb3c12f693ae01af48d3cca71c0796b07d8",
+    "physics/coupling.py": "3cd33682116599fd452a9ce030a98189daaf0636a8c018610124cd43b2204dc5"
+  }
+}

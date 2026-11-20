@@ -1,0 +1,13 @@
+case,plan,method,queries_per_gradient,first_query_to_0.995,terminal_mean_haar
+uncoupled,planned_ascending,individual,17,36,0.9999999990180951
+uncoupled,planned_ascending,graph,3,8,0.9999999998858377
+uncoupled,planned_permuted,individual,17,36,0.9999999989998118
+uncoupled,planned_permuted,graph,3,8,0.9999999998991188
+chain,planned_ascending,individual,17,36,0.9989572067695668
+chain,planned_ascending,graph,7,16,0.9989572068235018
+chain,planned_permuted,individual,17,36,0.9994605113986162
+chain,planned_permuted,graph,7,16,0.9994605114155124
+dense,planned_ascending,individual,17,36,0.9994700202612543
+dense,planned_ascending,graph,17,36,0.9994700187442027
+dense,planned_permuted,individual,17,36,0.9996731730224946
+dense,planned_permuted,graph,17,36,0.999673171347272
