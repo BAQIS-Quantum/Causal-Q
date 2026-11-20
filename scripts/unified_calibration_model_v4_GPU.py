@@ -72,7 +72,7 @@ class UnifiedCalibrationModel:
         # last computed Dyson spectrum
         self.spectrum = None
 
-    # ================== 工具函数（numpy 版） ==================
+    # NumPy operators and state fidelity
     @staticmethod
     def n_qubit_op(single_op, target, N):
         ops = [single_op if i == target else I2 for i in range(N)]
@@ -97,12 +97,11 @@ class UnifiedCalibrationModel:
         eigvals = np.clip(eigvals, 0, None)
         return float((np.sum(np.sqrt(eigvals))) ** 2)
 
-    # ================== 工具函数（Torch+GPU 版） ==================
+    # PyTorch operators and state fidelity
     @staticmethod
     def n_qubit_op_torch(single_op_t, target, N):
         """
-        single_op_t: 2x2 torch 矩阵（在 GPU 上）
-        返回: 2^N x 2^N torch 矩阵
+        Embed a 2x2 operator on the target qubit in the N-qubit Hilbert space.
         """
         ops = [single_op_t if i == target else I2_t for i in range(N)]
         M = ops[0]
@@ -113,8 +112,7 @@ class UnifiedCalibrationModel:
     @staticmethod
     def partial_trace_keep_one_qubit_torch(statevec_t, keep, N):
         """
-        statevec_t: (2^N,) torch 复数向量（GPU）
-        返回: rho (2x2) torch 矩阵
+        Return the 2x2 reduced density matrix of the selected qubit.
         """
         psi = statevec_t.view(*([2] * N))
         axes = [keep] + [i for i in range(N) if i != keep]
@@ -125,7 +123,7 @@ class UnifiedCalibrationModel:
     @staticmethod
     def state_fidelity_torch(rho_t, sigma_t):
         """
-        Uhlmann fidelity, GPU 版本
+        Compute Uhlmann fidelity with PyTorch.
         """
         evals, evecs = torch.linalg.eigh(rho_t)
         evals_clamped = torch.clamp(evals, min=0.0)
@@ -140,7 +138,7 @@ class UnifiedCalibrationModel:
 
     def avg_f_i_for_qubit_torch(self, i_target, U_real_t, U_ideal_i_t):
         """
-        GPU 版：对 { |0>, |1>, |+>, |+i> } 四个输入态做平均，得到单比特平均保真度。
+        Average the target-qubit fidelity over |0>, |1>, |+>, and |+i>.
         """
         N = self.N
         b0 = torch.tensor([1, 0], dtype=TORCH_DTYPE, device=TORCH_DEVICE)
@@ -167,13 +165,13 @@ class UnifiedCalibrationModel:
 
         return float(np.mean(fids))
 
-    # ================== hij 生成 & 频率 ==================
+    # Coupling matrices and frequencies
     def _generate_hij(self, mode="dense", seed=None, scale=0.03, diag_scale=0.03, periodic=False):
         rng = np.random.default_rng(seed)
         N = self.N
         H = np.zeros((N, N), dtype=float)
 
-        # ---------- 1D 链式耦合 ----------
+        # Uncoupled and one-dimensional chain models
         if mode == "nointeraction":
             return H
         if mode == "chain":
@@ -181,13 +179,13 @@ class UnifiedCalibrationModel:
                 w = rng.uniform(0.0, scale)
                 H[i,i+1] = 0 # WARNING
             #    H[i, i + 1] = H[i + 1, i] = w
-            # H[2, 3] = 0  # 你之前手动断一条边
+            # H[2, 3] = 0  # Remove the link between qubits 2 and 3.
             np.fill_diagonal(H, 0.0)
             # WARNING
             
             return H
 
-        # ---------- 全连接耦合 ----------
+        # Fully connected model
         if mode == "dense":
             scale_dense = 0.02
             A = rng.uniform(0.0, scale_dense, size=(N, N))
@@ -208,7 +206,7 @@ class UnifiedCalibrationModel:
             # H[3,2] = 0.018
             return H
 
-        # ---------- 2D 格点耦合 ----------
+        # Two-dimensional grid
         def rc(i):
             return divmod(i, self.column)
 
@@ -259,14 +257,14 @@ class UnifiedCalibrationModel:
 
     def _compute_f0(self, fluxes):
         """
-        裸频率 f0(flux)（实验上拟合到的比特频率，不含残留耦合），单位 ~ GHz。
+        Compute the bare qubit frequencies f0(flux) in GHz.
         """
         fluxes = np.asarray(fluxes, float)
         return self.E_JS * np.sqrt(np.cos(fluxes) ** 2 + self.d ** 2 * np.sin(fluxes) ** 2) - self.E_C
 
     def calculate_wi_dyson(self, fluxes, max_iter=50, tol=1e-10, damping=0.7):
         """
-        Dyson-like 自洽频率 f_i（真实频率，含残留耦合修正），单位同上 ~ GHz：
+        Solve for the frequencies including residual coupling (GHz):
 
             f_i = w0_i + Σ_j h_ij^2 / (f_i - w0_j)
         """
@@ -302,11 +300,8 @@ class UnifiedCalibrationModel:
 
     def frequencies_from_flux(self, flux):
         """
-        给定 flux（长度 N），返回：
-          - omega_q:  真实角频率（Dyson），这里先返回 f_dyson（你原代码 2π 被注释）
-          - omega_d:  clean 驱动角频率（bare），同样返回 f0
-
-        注意：这里 **不加噪声**，噪声只在构造真实哈密顿量时加入。
+        Return the coupled qubit frequencies and bare drive frequencies for N fluxes.
+        Both use the same units as f0. Drive and qubit noise are added during sampling.
         """
         flux = np.asarray(flux, float)
         f0 = self._compute_f0(flux)
@@ -316,7 +311,7 @@ class UnifiedCalibrationModel:
         omega_q_clean = f_dyson
         return omega_q_clean, omega_d_clean
 
-    # ================== RB-style 哈密顿量（numpy 版，保留） ==================
+    # NumPy Hamiltonians and fidelity
     def build_real_H(self, omega_q_noisy, omega_d_noisy, Omega_d, phi):
         N = self.N
         H = np.zeros((2 ** N, 2 ** N), dtype=complex)
@@ -382,7 +377,7 @@ class UnifiedCalibrationModel:
         phi=None,
     ):
         """
-        CPU+numpy 版本，暂时保留。
+        Compute the four-state fidelity for each qubit with NumPy and SciPy.
         """
         N = self.N
         if phi is None:
@@ -398,10 +393,10 @@ class UnifiedCalibrationModel:
             F_list.append(Fi)
         return np.array(F_list)
 
-    # ================== RB-style 哈密顿量 & 保真度（Torch+GPU 版） ==================
+    # PyTorch Hamiltonians and fidelity
     def build_real_H_torch(self, omega_q, omega_d_noisy, Omega_d, phi):
         """
-        真实哈密顿量，GPU 版本：
+        Build the driven, coupled Hamiltonian:
           H_real = Σ_i Δ_i/2 Z_i
                    + Σ_i Ω_i/2 (cosφ_i X_i + sinφ_i Y_i)
                    + Σ_{i<j} h_ij (X_i X_j + Y_i Y_j)
@@ -442,7 +437,7 @@ class UnifiedCalibrationModel:
 
     def build_ideal_H_for_qubit_torch(self, i_target, omega_q, omega_d_clean, Omega_d, phi):
         """
-        理想单比特哈密顿量，GPU 版本。
+        Build the ideal Hamiltonian for the target qubit.
         """
         N = self.N
         dim = 2 ** N
@@ -477,16 +472,14 @@ class UnifiedCalibrationModel:
         phi=None,
     ):
         """
-        在 GPU 上计算所有比特的单比特平均保真度 F_i：
-
-          - 真实哈密顿量：omega_d_noisy = omega_d_clean + N(0, drive_noise_std)
-          - 理想哈密顿量：用 omega_d_clean（不加噪声）
-          - U_real, U_ideal_i, partial trace, fidelity 全在 A100 上跑
+        Compute each qubit's four-state fidelity on the selected PyTorch device.
+        Use noisy carrier frequencies for the coupled evolution and clean
+        carrier frequencies for the ideal reference.
         """
         N = self.N
         if phi is None:
             phi = np.zeros(N)
-        # 真实演化
+        # Propagate the coupled system.
         H_real_t = self.build_real_H_torch(omega_q_noisy, omega_d_noisy, Omega_real, phi)
         U_real_t = torch.linalg.matrix_exp(-1j * H_real_t * Tg)
 
@@ -499,7 +492,7 @@ class UnifiedCalibrationModel:
 
         return np.array(F_list, dtype=float)
 
-    # ================== 数据集生成 ==================
+    # Dataset generation
     def _sample_flux(self, dist):
         kind, params = dist
         if kind == "normal":
@@ -528,17 +521,8 @@ class UnifiedCalibrationModel:
     ):
         
         """
-        生成数据集：
-
-        对每个样本 s：
-          1) 采样 flux_s
-          2) 由 frequencies_from_flux 得到：
-             - omega_d_clean
-             - omega_q
-          3) 采样 Ω_ideal, Ω_real, φ, Tg
-          4) 根据 use_torch:
-             - True:  调用 simulate_F_list_torch（A100 上算 F）
-             - False: 调用 simulate_F_list（CPU+numpy）
+        Sample fluxes, frequencies, pulse amplitudes, phases, and durations.
+        When requested, evaluate four-state fidelities with PyTorch or NumPy.
         """
         N = self.N
 
@@ -563,7 +547,7 @@ class UnifiedCalibrationModel:
             Omega_ideal = self.rng.normal(mu_Omega, sigma_Omega, size=N)
             Omega_real = Omega_ideal + self.rng.normal(0.0, Omega_error_std, size=N)
 
-            # 真实驱动频率：加入噪声
+            # Apply drive-frequency noise.
             if drive_noise_std > 0.0:
                 omega_d_noisy = omega_d_clean + self.rng.normal(0.0, drive_noise_std, size=N)
             else:
@@ -604,7 +588,7 @@ class UnifiedCalibrationModel:
                         Tg,
                         PHI
                     )
-            # 记录本次采样的驱动幅度与相位
+            # Store the sampled parameters.
             Omega_all_real[s] = Omega_real
             Omega_all_ideal[s] = Omega_ideal
             flux_all[s] = flux
@@ -647,7 +631,7 @@ class UnifiedCalibrationModel:
 
     def save_dataset(self, data, filepath, compressed=True):
         """
-        保存 generate_dataset 返回的字典到 .npz 文件。
+        Save the generated dataset as an NPZ archive.
         """
         saver = np.savez_compressed if compressed else np.savez
         payload = {}
@@ -660,13 +644,13 @@ class UnifiedCalibrationModel:
 
 
 if __name__ == "__main__":
-    # 小测试：在 A100 上计算 F_fidelity
+    # Generate a sample dataset on the selected device.
     print("Using torch device:", TORCH_DEVICE)
 
     model = UnifiedCalibrationModel(
         column=4,
         row=4,
-        # coupling_form="nn8",   # 触发 chain 模式
+        # coupling_form="nn8",  # Include axial and diagonal grid neighbors.
         coupling_form='dense',
         seed=43,
     )
@@ -675,13 +659,13 @@ if __name__ == "__main__":
         samples=40000,
         flux_dist=("normal", {"loc": 0.0, "scale": 0.25}),
         Omega_rng=(0.06, 0.08),
-        Omega_error_std=0.005,   # 可设置为 0
+        Omega_error_std=0.005,   # Set to zero for ideal amplitudes.
         phi_rule="zeros",
         Tg_rng=(120, 120.0),
-        drive_noise_std=0.2, #可设置为0
+        drive_noise_std=0.2,  # Set to zero for noiseless carriers.
         freq_noise_std=0.000,
         # drive_noise_std=0,
-        use_torch=True,# <== 开启 GPU 版 F_fidelity 计算
+        use_torch=True,  # Use PyTorch when computing fidelities.
         compute_F = False
     )
     

@@ -23,12 +23,12 @@ import json
 
 
 # ============================================
-#        互信息 / 条件互信息 工具函数
+# Mutual information and conditional mutual information
 # ============================================
 
 def MI(x, y):
     """
-    I(x;y)，x,y 一维向量
+    Estimate I(x;y) for two one-dimensional samples.
     """
     x = np.asarray(x).reshape(-1, 1)
     y = np.asarray(y).reshape(-1, 1)
@@ -37,7 +37,7 @@ def MI(x, y):
 
 def CMI_xy_z(x, y, Z):
     """
-    I(x;y|Z)，Z:(n,d_z)
+    Estimate I(x;y|Z) for Z with shape (n_samples, n_covariates).
     """
     x = np.asarray(x).reshape(-1, 1)
     y = np.asarray(y).reshape(-1, 1)
@@ -51,11 +51,10 @@ def independence_test(x, y, Z=None,
                       n_perm=30,
                       rng=None,k=10):
     """
-    互信息/条件互信息独立性检验：
-      - Z is None: 用 MI(x,y)
-      - Z 不为空: 用 CMI(x,y|Z)
-    use_perm=True 时，使用 permutation baseline 的 ΔI = I - E[I_perm]
-    返回: (indep: bool, score: float)
+    Compare an information estimate with the independence threshold alpha.
+      Use MI when Z is absent and CMI otherwise.
+    For CMI, use_perm subtracts the mean from permutations of y.
+    Return the independence decision and the score.
     """
     if rng is None:
         rng = np.random.default_rng(0)
@@ -74,7 +73,7 @@ def independence_test(x, y, Z=None,
         indep = (val <= alpha)
         return indep, val
 
-    # 带 permutation baseline 的版本
+    # Center the CMI estimate on the permutation mean.
     base = ee.cmi(x, y, Z)
     perml = []
     for _ in range(n_perm):
@@ -87,7 +86,7 @@ def independence_test(x, y, Z=None,
 
 
 # ============================================
-#          通用 PC 算法（连续变量 + MI/CMI）
+# PC-style search for continuous variables
 # ============================================
 
 def pc_generic(data_matrix,
@@ -100,33 +99,33 @@ def pc_generic(data_matrix,
                max_cond_set=2,
                verbose=False):
     """
-    一个完全通用的 PC 实现：
+    Estimate a skeleton and orient edges with exogeneity constraints, colliders, and Meek rule R1.
 
-    参数
-    ----
+    Parameters
+    ----------
     data_matrix : (n_samples, n_vars)
-    var_names   : 长度为 p 的变量名列表，对应到 data_matrix 的列
-    candidate_pairs : 可选，允许存在无向边的节点对集合
-        - 类型：set of frozenset({a,b})
-        - 如果为 None，则默认全连通图（完全图）
-    exogenous   : 可选，外生变量集合（禁止有指向它们的箭头）
-    alpha       : 独立性阈值，score <= alpha 视为独立
-    use_perm    : 条件 MI 时是否用 permutation baseline
-    n_perm      : permutation 次数
-    max_cond_set: 条件集合最大阶数
+    var_names   : Variable names in column order.
+    candidate_pairs : Optional set of permitted undirected edges.
+        Each edge is a frozenset of its two endpoints.
+        The default allows all pairs.
+    exogenous   : Optional set of nodes with no incoming arrows.
+    alpha       : Estimates at or below this threshold indicate independence.
+    use_perm    : Subtract the permutation baseline when computing CMI.
+    n_perm      : Number of permutations.
+    max_cond_set: Maximum conditioning-set size.
 
-    返回
-    ----
-    P : dict，P[u] 是 u -> child 的集合（有向边）
-    G : dict，无向骨架图，G[u] 是与 u 相邻的节点集合（不含方向）
-    sep_sets : dict，分离集合，键为 frozenset({a,b})，值为分离它们的条件集 S
+    Returns
+    -------
+    P : dict mapping each node to its children.
+    G : dict mapping each node to its neighbors in the undirected skeleton.
+    sep_sets : dict mapping each removed pair to its separating set.
     """
     X = np.asarray(data_matrix)
     n, p = X.shape
     assert len(var_names) == p
     idx = {v: i for i, v in enumerate(var_names)}
 
-    # 允许边
+    # Candidate edges
     if candidate_pairs is None:
         allow = set()
         for i in range(p):
@@ -137,7 +136,7 @@ def pc_generic(data_matrix,
 
     exogenous = set(exogenous) if exogenous is not None else set()
 
-    # 初始化无向骨架图 G
+    # Initialize the undirected skeleton.
     G = {v: set() for v in var_names}
     for e in allow:
         a, b = tuple(e)
@@ -149,7 +148,7 @@ def pc_generic(data_matrix,
         for v in var_names:
             print(v, ":", sorted(G[v]))
 
-    # 裁剪骨架: 逐阶增加条件集合大小
+    # Prune edges in order of increasing conditioning-set size.
     sep_sets = {}
     L = 0
     changed = True
@@ -157,7 +156,7 @@ def pc_generic(data_matrix,
 
     while changed and L <= max_cond_set:
         changed = False
-        # 为了遍历每条边一次，用一个 snapshot
+        # Visit each edge once at this order.
         edges_snapshot = [
             (a, b)
             for a in var_names
@@ -192,12 +191,11 @@ def pc_generic(data_matrix,
                 )
 
                 if indep:
-                    # 删除边 a—b
                     G[a].discard(b)
                     G[b].discard(a)
                     sep_sets[frozenset({a, b})] = set(S)
                     changed = True
-                    # 测试
+                    # Trace removal of this pair.
                     if (a, b) == ("Phi_0", "omega_4") or (a, b) == ("omega_4", "Phi_0"):
                         print(f"[PC-debug] removed Phi_0—omega_4 with S={S}, L={L}, score={score:.6g}")
                     if verbose:
@@ -211,35 +209,34 @@ def pc_generic(data_matrix,
             print(v, ":", sorted(G[v]))
 
     # ============================================
-    #              定向阶段
+    # Edge orientation
     # ============================================
 
     P = {v: set() for v in var_names}  # P[u] = {children}
 
-    # 先用外生性：把 exogenous -> 邻居 的方向固定
+    # Orient edges outward from exogenous nodes.
     for v in exogenous:
         if v not in G:
             continue
         for nei in G[v]:
             P[v].add(nei)
 
-    # V 结构：x - z - y 且 x,y 不邻接，z 不在 sep(x,y) ⇒ x->z<-y
+    # Orient unshielded triples x-z-y as colliders when z is absent from the separating set.
     for z in var_names:
         z_nei = list(G[z])
         for i in range(len(z_nei)):
             for j in range(i + 1, len(z_nei)):
                 x, y = z_nei[i], z_nei[j]
-                # x,y 邻接则不是 V 结构
+                # Adjacent endpoints shield the triple.
                 if (y in G[x]) or (x in G[y]):
                     continue
                 Sxy = sep_sets.get(frozenset({x, y}), set())
                 if z not in Sxy:
-                    # 避免指向外生变量
                     if z not in exogenous:
                         P[x].add(z)
                         P[y].add(z)
 
-    # Meek 规则 R1：x->y 且 y—z 无向，且 x,z 不邻接 ⇒ y->z
+    # Meek rule R1: orient y-z as y->z when x->y and x is not adjacent to z.
     changed = True
     while changed:
         changed = False
@@ -256,7 +253,6 @@ def pc_generic(data_matrix,
                 continue
 
             for z in undirected_nei:
-                # 检查是否存在 x->y，且 x,z 不邻接
                 for x in parents_y:
                     if (z not in G[x]) and (x not in G[z]):
                         if z not in exogenous:
@@ -266,7 +262,7 @@ def pc_generic(data_matrix,
                 if changed:
                     break
 
-    # 最后再保险：清理所有指向外生变量的箭头
+    # Remove any remaining arrows into exogenous nodes.
     for v in exogenous:
         for u in var_names:
             if v in P[u]:
@@ -288,7 +284,7 @@ def print_directed(P, title="Directed edges"):
 
 
 # ============================================
-#            分层因果：各层封装
+# Layer-specific analyses
 # ============================================
 
 def layer_phi_to_omega(data,
@@ -298,10 +294,10 @@ def layer_phi_to_omega(data,
                        max_cond_set=2,
                        verbose=False):
     """
-    第 1 层：Phi_i (flux_i) -> omega_q_j
-    数据字段：
+    Layer 1: Phi_i (flux_i) -> omega_q_j.
+    Input arrays:
       - data["flux"]    : (samples, N)
-      - data["omega_q"] : (samples, N)
+      - data["omega_q_clean"] : (samples, N)
     """
     flux = np.asarray(data["flux"])
     omega_q = np.asarray(data["omega_q_clean"])
@@ -310,7 +306,7 @@ def layer_phi_to_omega(data,
     X = np.concatenate([flux, omega_q], axis=1)
     var_names = [f"Phi_{i}" for i in range(N)] + [f"omega_{i}" for i in range(N)]
 
-    # 只允许 Phi_i -- omega_j 的边
+    # Allow only flux-frequency edges.
     candidate_pairs = set()
     for i in range(N):
         a = f"Phi_{i}"
@@ -341,10 +337,10 @@ def layer_omegaq_to_omegad(data,
                           verbose=False):
     """
     NOTE:
-    第 2 层：omega_q_i -> omega_d_k, omega_q_i 是通过dyson计算出来的
-    数据字段：
-      - data["omega_q"] : (samples, N)
-      - data["omega_d"] : (samples, N)
+    Layer 2: Dyson-derived qubit frequencies -> drive frequencies.
+    Input arrays:
+      - data["omega_q_clean"] : (samples, N)
+      - data["omega_d_noisy"] : (samples, N)
     """
     omega_q = np.asarray(data["omega_q_clean"])
     omega_d = np.asarray(data["omega_d_noisy"])
@@ -383,9 +379,9 @@ def layer_omega_to_F(data,
                      verbose=False):
     """
     NOTE:
-    第 2 层：omega_q_i -> F_k,omega_q_i 是通过dyson计算出来的
-    数据字段：
-      - data["omega_q"] : (samples, N)
+    Alternate layer 2: Dyson-derived qubit frequencies -> F_k.
+    Input arrays:
+      - data["omega_q_clean"] : (samples, N)
       - data["F"]       : (samples, N)
     """
     omega_q = np.asarray(data["omega_q_clean"])
@@ -425,8 +421,8 @@ def layer_Omega_to_F(data,
                      max_cond_set=2,
                      verbose=False):
     """
-    第 3 层：Omega_i -> F_k
-    数据字段：
+    Layer 3: Omega_i -> F_k.
+    Input arrays:
       - data["Omega_real"] : (samples, N)
       - data["F"]          : (samples, N)
     """
@@ -467,13 +463,12 @@ def layer_omega_d_to_F(data,
                        max_cond_set=2,
                        verbose=False):
     """
-    第 4 层：omega_d_i -> F_k
+    Layer 4: omega_d_i -> F_k.
 
-    这里假设数据中存在：
-      - data["omega_d"] : (samples, N)  驱动频率
+    Input arrays:
+      - data["omega_d_noisy"] : (samples, N), drive frequency
       - data["F"]       : (samples, N)
 
-    如果没有 'omega_d' 这个 key，会自动跳过（返回空图）。
     """
 
     omega_d = np.asarray(data["omega_d_noisy"])
@@ -507,12 +502,12 @@ def layer_omega_d_to_F(data,
 
 
 # ============================================
-#           组合多层图的工具函数
+# Merge layer graphs
 # ============================================
 
 def merge_graphs(*Ps):
     """
-    把多层得到的 P 字典合并成一个总的有向图。
+    Merge directed child sets across layers.
     """
     P_total = {}
     for P in Ps:
@@ -528,8 +523,8 @@ def merge_graphs(*Ps):
 
 def merge_skeletons(*Gs):
     """
-    把多层得到的无向骨架 G 合并成一个总骨架（无向邻接表 dict）。
-    每个 G 的格式：G[u] = set(neighbors)
+    Merge the undirected skeletons into one adjacency table.
+    Each G maps a node to its set of neighbors.
     """
     G_total = {}
     for G in Gs:
@@ -548,9 +543,9 @@ def merge_skeletons(*Gs):
 
 def run_pc_pipeline(
         data,
-        includeF=True,                 # 兼容旧用法
-        run_layers=None,               # 新增：比如 ("P1",) 或 ("P1","P2")
-        merge_mode="directed",         # "directed" 或 "skeleton"
+        includeF=True,                 # Used when run_layers is omitted.
+        run_layers=None,               # For example, ("P1",) or ("P1", "P2").
+        merge_mode="directed",         # "directed" or "skeleton"
         alpha1=1e-3,
         alpha2=1e-3,
         alpha3=1e-3,
@@ -561,18 +556,17 @@ def run_pc_pipeline(
         verbose=True
     ):
     """
-    run_layers 可选值：P1,P2,P3,P4
+    Available layers:
       P1: Phi -> omega_q
-      P2: omega_q -> omega_d   （注意：你代码里 Layer2 目前是这个）
+      P2: omega_q -> omega_d
       P3: Omega -> F
       P4: omega_d -> F
 
     merge_mode:
-      - "directed": 返回合并后的有向边 P_total
-      - "skeleton": 返回合并后的无向骨架 G_total
+      - "directed" returns the merged directed graph P_total.
+      - "skeleton" returns the merged undirected graph G_total.
     """
 
-    # 兼容旧 includeF：如果用户不传 run_layers，则按 includeF 决定
     if run_layers is None:
         run_layers = ("P1",) if not includeF else ("P1", "P2", "P3", "P4")
     run_layers = tuple(run_layers)
@@ -640,13 +634,12 @@ def run_pc_pipeline(
         G_layers["P4"] = G4
         print_directed(P4, title="Layer 4: omega_d -> F")
 
-    # ---------- 合并 ----------
+    # Merge the selected layers.
     if merge_mode == "skeleton":
         G_total = merge_skeletons(*(G_layers[k] for k in run_layers if k in G_layers))
         print("\n=== Final merged skeleton (undirected) ===")
         return G_total, {"P_layers": P_layers, "G_layers": G_layers}
 
-    # 默认：合并有向图
     P_total = merge_graphs(*(P_layers[k] for k in run_layers if k in P_layers))
     print("\n=== Final merged causal graph ===")
     print_directed(P_total, title=f"Merged graph {run_layers}")
@@ -672,15 +665,15 @@ def plot_layered_causal_graph(
         shrink_pix=12
     ):
     """
-    论文级分层 DAG，确保节点是圆形且比例一致，不会出现白图。
+    Plot the layered graph with circular nodes and equal axis scaling.
     """
 
-    # -------- 收集节点 --------
+    # Collect all endpoints.
     nodes = set(P_total.keys())
     for ch in P_total.values():
         nodes |= set(ch)
 
-    # -------- 每类变量颜色 --------
+    # Colors by variable type
     type_color = {
         "Phi": "skyblue",
         "omega": "lightgreen",
@@ -689,10 +682,10 @@ def plot_layered_causal_graph(
         "Omega": "lightcoral",
     }
 
-    # -------- 层次结构 --------
+    # Layer order
     row_of_type = {
         "Phi": 0,
-        "omega": 1,      # ⭐ omega 行放在 omega_d 上面
+        "omega": 1,      # Place qubit frequencies above drive frequencies.
         "omega_d": 2,
         "F": 3,
         "Omega": 4,
@@ -711,7 +704,7 @@ def plot_layered_causal_graph(
             return "omega"   # ω_q
         return "other"
 
-    # -------- 计算节点坐标 --------
+    # Node coordinates
     positions = {}
     max_idx = max(_idx_from_name(n) for n in nodes)
 
@@ -736,19 +729,19 @@ def plot_layered_causal_graph(
 
         positions[n] = (x, y)
 
-    # -------- 新增：计算坐标范围 → 自动适配图像大小 --------
+    # Size the figure to fit all nodes.
     xs = np.array([p[0] for p in positions.values()])
     ys = np.array([p[1] for p in positions.values()])
     xmin, xmax = xs.min() - 2, xs.max() + 2
     ymin, ymax = ys.min() - 2, ys.max() + 2
 
-    width = max(12, (xmax - xmin) * 0.8)   # 动态宽度，最多屏幕安全范围
+    width = max(12, (xmax - xmin) * 0.8)
     height = max(6, (ymax - ymin) * 0.6)
 
     fig, ax = plt.subplots(figsize=(width, height))
     ax.axis("off")
 
-    # -------- 画节点 --------
+    # Draw nodes.
     for n, (x, y) in positions.items():
         t = _node_type(n)
         col = type_color.get(t, "white")
@@ -759,7 +752,7 @@ def plot_layered_causal_graph(
         ax.text(x, y, str(_idx_from_name(n)),
                 ha="center", va="center", fontsize=11)
 
-    # -------- 画箭头（从圆周到圆周）--------
+    # Draw arrows between node boundaries.
     for src, children in P_total.items():
         x1, y1 = positions[src]
         for tgt in children:
@@ -776,48 +769,44 @@ def plot_layered_causal_graph(
                 )
             )
 
-    # -------- 图例 --------
+    # Legend
     import matplotlib.lines as mlines
     handles = [mlines.Line2D([], [], marker='o', linestyle='None',
                              markerfacecolor=c, markeredgecolor="black",
                              markersize=8)
                for c in type_color.values()]
 
-    # 使用 LaTeX 格式为图例标签
     labels = [r"$\Phi$", r"$f$", r"$\omega_d$", r"$F$", r"$\Omega$"]
 
     ax.legend(handles, labels, title="Variable type", loc="upper right")
 
-    # -------- 设置坐标范围（核心修复点）--------
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ymin, ymax)
 
-    # -------- 防止裁切 --------
+    # Leave room for edge labels.
     plt.subplots_adjust(left=0.03, right=0.97, top=0.95, bottom=0.05)
 
-    # -------- 强制比例一致，使节点为正圆形 --------
+    # Draw nodes as circles.
     ax.set_aspect('equal', adjustable='box')
 
     plt.show()
 
     return fig
 
-# 假设你已经运行过因果推断过程并获得了 P_total
-# 假设 P_total 已经被生成，你可以使用以下代码来保存为 GraphML 格式
+# To export the merged graph:
 # save_graph_as_graphml(P_total)
 
-# 假设你已经运行过因果推断过程并获得了 P_total
-# 假设 P_total 已经被生成，你可以使用以下代码来绘制因果图
+# To plot the merged graph:
 # plot_causal_graph(P_total)
 
 def plot_causal_graph(P_total):
     """
-    绘制整体因果图
-    P_total: dict，合并后的因果关系图（每个节点指向它的子节点）
+    Plot the merged graph.
+    P_total maps each node to its children.
     """
     G = nx.DiGraph()
 
-    # 定义每种类型的变量及其对应颜色
+    # Color by variable type.
     node_types = {
         "Phi": "skyblue",
         "omega_q": "lightgreen",
@@ -826,18 +815,15 @@ def plot_causal_graph(P_total):
         "F": "lightyellow"
     }
 
-    # 添加节点和边
     for u, children in P_total.items():
         for v in children:
             G.add_edge(u, v)
 
-    # 画图：布局策略
     plt.figure(figsize=(12, 8))
 
-    # 使用 spring_layout，增大 k 值可以增加节点之间的间距，避免重叠
-    pos = nx.spring_layout(G, seed=42, k=1.5)  # 你可以试着调整 k 的值来减少重叠
+    # Larger k increases the preferred node spacing.
+    pos = nx.spring_layout(G, seed=42, k=1.5)
 
-    # 节点颜色和类型
     node_color = []
     for node in G.nodes():
         if "Phi" in node:
@@ -851,13 +837,11 @@ def plot_causal_graph(P_total):
         else:
             node_color.append(node_types["F"])
 
-    # 修改标签为比特数字
-    labels = {node: ''.join(filter(str.isdigit, node)) for node in G.nodes()}  # 只保留数字
+    # Label each node with its qubit index.
+    labels = {node: ''.join(filter(str.isdigit, node)) for node in G.nodes()}
 
-    # 绘制图，设置较小的节点
     nx.draw(G, pos, with_labels=True, labels=labels, node_size=1000, node_color=node_color, font_size=10, font_weight='bold', edge_color='gray', arrows=True, edgecolors="black", width=1.5)
 
-    # 添加图例
     handles = []
     labels_legend = []
     for node_type, color in node_types.items():
@@ -866,22 +850,20 @@ def plot_causal_graph(P_total):
 
     plt.legend(handles, labels_legend, title="Variable Types", loc="upper right", fontsize=12)
 
-    # 添加标题
     plt.title("Causal Graph", fontsize=16)
     plt.show()
 
-# 假设你已经运行过因果推断过程并获得了 P_total
-# 假设 P_total 已经被生成，你可以使用以下代码来绘制因果图
+# To plot the merged graph:
 # plot_causal_graph(P_total)
 
 def plot_causal_graph(P_total):
     """
-    绘制整体因果图
-    P_total: dict，合并后的因果关系图（每个节点指向它的子节点）
+    Plot the merged graph.
+    P_total maps each node to its children.
     """
     G = nx.DiGraph()
 
-    # 定义每种类型的变量及其对应颜色
+    # Color by variable type.
     node_types = {
         "Phi": "skyblue",
         "omega_q": "lightgreen",
@@ -890,18 +872,15 @@ def plot_causal_graph(P_total):
         "F": "lightyellow"
     }
 
-    # 添加节点和边
     for u, children in P_total.items():
         for v in children:
             G.add_edge(u, v)
 
-    # 画图：布局策略
     plt.figure(figsize=(12, 8))
 
-    # 使用 spring_layout，增大 k 值可以增加节点之间的间距，避免重叠
-    pos = nx.spring_layout(G, seed=42, k=1.5)  # 你可以试着调整 k 的值来减少重叠
+    # Larger k increases the preferred node spacing.
+    pos = nx.spring_layout(G, seed=42, k=1.5)
 
-    # 节点颜色和类型
     node_color = []
     for node in G.nodes():
         if "Phi" in node:
@@ -915,13 +894,11 @@ def plot_causal_graph(P_total):
         else:
             node_color.append(node_types["F"])
 
-    # 修改标签为比特数字
-    labels = {node: ''.join(filter(str.isdigit, node)) for node in G.nodes()}  # 只保留数字
+    # Label each node with its qubit index.
+    labels = {node: ''.join(filter(str.isdigit, node)) for node in G.nodes()}
 
-    # 绘制图，设置较小的节点
     nx.draw(G, pos, with_labels=True, labels=labels, node_size=1000, node_color=node_color, font_size=10, font_weight='bold', edge_color='gray', arrows=True, edgecolors="black", width=1.5)
 
-    # 添加图例
     handles = []
     labels_legend = []
     for node_type, color in node_types.items():
@@ -930,7 +907,6 @@ def plot_causal_graph(P_total):
 
     plt.legend(handles, labels_legend, title="Variable Types", loc="upper right", fontsize=12)
 
-    # 添加标题
     plt.title("Causal Graph", fontsize=16)
     plt.show()
 
@@ -941,34 +917,34 @@ def save_P_json(P_total, path):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, ensure_ascii=False, indent=2)
 # ============================================
-#                   Demo 入口
+# Demo
 # ============================================
 
 if __name__ == "__main__":
-    # 你可以在这里改成自己的数据文件
+    # Select the input dataset.
     # npz_path = "demo_dataset_3_3_gpu.npz" 
     # npz_path = "demo_dataset_gpu_1_10_chain_withF.npz"
     # npz_path = "nointerac_dataset_gpu_1_10_chain_withF.npz"
     # npz_path = "tttnointerac_dataset_gpu_1_10_chain_withF.npz"
     # npz_path = "tttnointerac_dataset_gpu_1_5_chain_withF.npz"
     # npz_path = "tttnointerac_dataset_gpu_1_5_chain_withF-2.npz"
-    # npz_path = "nointerac_dataset_gpu_1_10_chain_withF.npz" #图a
+    # npz_path = "nointerac_dataset_gpu_1_10_chain_withF.npz"  # Panel (a)
     # npz_path = "nointerac_dataset_gpu_1_5_chain_withF.npz"
     # npz_path = "interac_dataset_gpu_1_8_chain_withF.npz"
-    # npz_path = "interac_dataset_gpu_1_8_chain_withF-v2.npz" # 图b
-    # npz_path = "fullinterac_dataset_gpu_2_4_dense_withF.npz" # 图c
-    # npz_path = "fullinterac_dataset_gpu_4_4_nn8_withoutF.npz" # 用来做2*2 的论文图
+    # npz_path = "interac_dataset_gpu_1_8_chain_withF-v2.npz"  # Panel (b)
+    # npz_path = "fullinterac_dataset_gpu_2_4_dense_withF.npz"  # Panel (c)
+    # npz_path = "fullinterac_dataset_gpu_4_4_nn8_withoutF.npz"  # 2-by-2 panel layout
     # npz_path = "fullinterac_dataset_gpu_2_2_withoutF.npz"  
     # npz_path = "fullinterac_dataset_gpu_4_4_nn8_withoutF.npz"
     npz_path = "fullinterac_dataset_gpu_4_4_dense_withoutF.npz"
-    # includeF = False 只做 Phi -> omega_q
-    # includeF = True  做全部分层 (omega_q->F, Omega->F, omega_d->F)
+    # includeF=False selects only the flux-frequency layer.
+    # includeF=True selects all four layers.
     # includeF = True
 
     with np.load(npz_path, allow_pickle=True) as f:
         data = {k: f[k] for k in f.files}
 
-    # 这里 alpha 建议先设得比较小（甚至 0.0）看看骨架情况，再慢慢调大
+    # A small alpha, including zero, retains weak edges.
     P_total, pack = run_pc_pipeline(
         data,
         run_layers=("P1",),

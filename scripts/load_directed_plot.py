@@ -48,7 +48,7 @@ def get_1d_from_data(data: dict, varname: str, var_map: dict):
 
 
 # =========================
-#   有向图 P_total 的加载
+# Load the directed graph
 # =========================
 def load_P_json(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -56,16 +56,16 @@ def load_P_json(path):
     return {k: set(v) for k, v in obj.items()}
 
 # =========================
-#   只对图中边计算 MI
+# MI estimates on retained edges
 # =========================
 def compute_flux_f_mi_on_edges(P_total, data, var_map, knn=3):
     """
-    返回 mi_results: list[dict]，每条边一个 MI
+    Return one MI estimate per directed edge as a list of records.
     dict: {src, dst, src_idx, dst_idx, MI}
     """
     mi_results = []
     for src, dsts in P_total.items():
-        # NOTE example : src="Phi_0"，dsts={"omega_0","omega_1"}
+        # Example: src="Phi_0", dsts={"omega_0", "omega_1"}.
         for dst in dsts:
             x = get_1d_from_data(data, src, var_map)
             y = get_1d_from_data(data, dst, var_map)
@@ -81,8 +81,8 @@ def compute_flux_f_mi_on_edges(P_total, data, var_map, knn=3):
 
 def save_mi_results_json(mi_results, path="mi_results.json", meta=None):
     """
-    保存为 JSON：便于查看、跨语言
-    meta: dict 可选，写入一些信息（knn、npz_path、P_json_path、width/length 等）
+    Write per-edge MI estimates to JSON.
+    The optional meta dictionary records estimator and dataset settings.
     """
     payload = {
         "meta": meta or {},
@@ -99,7 +99,7 @@ def load_mi_results_json(path="mi_results.json"):
 
 # def save_mi_results_npz(mi_results, path="mi_results.npz", meta=None):
 #     """
-#     保存为 NPZ：加载快、体积小
+#     Save the arrays in a compressed NPZ file.
 #     """
 #     src_idx = np.array([int(x["src_idx"]) for x in mi_results], dtype=int)
 #     dst_idx = np.array([int(x["dst_idx"]) for x in mi_results], dtype=int)
@@ -120,8 +120,8 @@ def load_mi_results_json(path="mi_results.json"):
 
 def save_mi_results_npz(mi_results,M_phi_omega=None,path="mi_results.npz", meta=None):
     """
-    保存为 NPZ：加载快、体积小
-    可选把 M_ij 一起存进去（key="Mij"）
+    Save the MI estimates in a compressed NPZ file.
+    If supplied, store the pair score matrix under "Mij_phi_omega".
     """
     src_idx = np.array([int(x["src_idx"]) for x in mi_results], dtype=int)
     dst_idx = np.array([int(x["dst_idx"]) for x in mi_results], dtype=int)
@@ -176,7 +176,7 @@ def load_mi_results_npz(path="mi_results.npz"):
 #     return mi_results, meta
 
 # =========================
-#   颜色映射（保持你原逻辑 + 加安全兜底）
+# Color maps
 # =========================
 def _make_strictly_increasing(arr, eps=1e-9):
     arr = list(arr)
@@ -188,12 +188,11 @@ def _make_strictly_increasing(arr, eps=1e-9):
 
 def get_custom_palette(vmin, vmin_mid, mid, mid_vmax, vmax):
     """
-    按 analysis_v5.py 的分段逻辑生成 colormap，但做了“位置单调”兜底，避免报错。
-    :contentReference[oaicite:1]{index=1}
+    Build a segmented color map with strictly increasing breakpoints.
     """
     colors = ["lightgray", "cornflowerblue", "royalblue", "darkblue", "mediumpurple"]
 
-    # 兜底：避免除零或区间反转导致 positions 不递增
+    # Separate coincident breakpoints before normalizing them.
     vmin, vmin_mid, mid, mid_vmax, vmax = _make_strictly_increasing([vmin, vmin_mid, mid, mid_vmax, vmax])
 
     vmin_mid_normalized = (vmin_mid - vmin) / (mid - vmin)
@@ -206,12 +205,12 @@ def get_custom_palette(vmin, vmin_mid, mid, mid_vmax, vmax):
         np.clip(mid_vmax_normalized,       0.0, 1.0),
         1.0,
     ]
-    # 再兜底一次：强制递增
+    # Keep positions strictly increasing after clipping.
     positions = _make_strictly_increasing(positions, eps=1e-6)
 
     return LinearSegmentedColormap.from_list("custom", list(zip(positions, colors)))
 
-# 更平滑的连续色图（保持原来的浅->深蓝紫风格）
+# Continuous palette
 USE_SMOOTH_CMAP = True
 SMOOTH_CMAP_COLORS = ["white", "cornflowerblue", "royalblue", "mediumpurple", "darkblue"]
 
@@ -219,8 +218,8 @@ def get_smooth_palette():
     return LinearSegmentedColormap.from_list("custom_smooth", SMOOTH_CMAP_COLORS, N=256)
 
 # =========================
-#   网格布局绘图：你的原逻辑不变
-#   只把默认参数改成 analysis_v5.py 那套：
+# Grid plot
+# Default styling:
 #     node_size=400, font_size=18, arrowsize=20, edge_width=3.0
 # =========================
 def plot_grid_with_mi(mi_results, width=None, length=None,
@@ -234,9 +233,9 @@ def plot_grid_with_mi(mi_results, width=None, length=None,
     plt.clf()
     ax = plt.gca()
 
-    # ---------- 1) 从 mi_results 自动推断需要的节点数 ----------
+    # Infer the number of qubits from the edge endpoints.
     if len(mi_results) == 0:
-        # 没边时也至少画个空图
+        # Use the supplied grid dimensions for an empty graph.
         N = (width or 1) * (length or 1)
     else:
         max_idx = 0
@@ -244,18 +243,18 @@ def plot_grid_with_mi(mi_results, width=None, length=None,
             max_idx = max(max_idx, int(it["src_idx"]), int(it["dst_idx"]))
         N = max_idx + 1
 
-    # ---------- 2) width/length 兜底：如果没给或给错，就自动生成 ----------
+    # Expand the grid when its dimensions are unspecified or too small.
     if width is None or length is None or width * length < N:
         width = int(math.ceil(math.sqrt(N)))
         length = int(math.ceil(N / width))
 
-    # grid pos: i -> (col, -row)，保证 0..N-1 都有 pos
+    # Assign each qubit a grid position (column, -row).
     pos = {i: (divmod(i, width)[1], -divmod(i, width)[0]) for i in range(N)}
 
     G = nx.DiGraph()
     G.add_nodes_from(range(N))
 
-    # ---- 先统计双向边 ----
+    # Identify reciprocal edges.
     edge_set = set()
     for it in mi_results:
         si = int(it["src_idx"])
@@ -332,12 +331,12 @@ def plot_grid_with_mi(mi_results, width=None, length=None,
 
 def compute_average_flux_f_cmi(data, flux_key="flux", omega_key="omega_q_clean", knn=3):
     """
-    计算对称矩阵 M (N,N):
+    Compute the symmetric N-by-N pair score matrix:
       M_ij = 1/2 * [ CMI(flux_i, flux_j | omega_q_i) + CMI(flux_i, flux_j | omega_q_j) ]
-    其中 omega_q_i 指 omega_key 矩阵的第 i 列 (S,1)。
+    omega_q_i is column i of data[omega_key].
 
-    返回:
-      M: (N,N) numpy array, 对称, 对角为0
+    Returns
+        M: symmetric array with zero diagonal.
     """
     flux  = np.asarray(data[flux_key])      # (S, N)
     omega = np.asarray(data[omega_key])     # (S, N)
@@ -349,7 +348,7 @@ def compute_average_flux_f_cmi(data, flux_key="flux", omega_key="omega_q_clean",
     S, N = flux.shape
     M = np.zeros((N, N), dtype=float)
 
-    # 只算上三角，再对称化
+    # Evaluate each unordered pair once.
     for i in range(N):
         Xi = flux[:, [i]]  # (S,1)
         Zi = omega[:, [i]] # (S,1)
@@ -381,7 +380,7 @@ def scatter_hij_vs_Mij(hij, M, use_abs_hij=True, title="scatter(hij, Mij)",save_
     if use_abs_hij:
         x = np.abs(x)
     x = x * 1000.0
-    # 相关系数时去掉 hij 为 0 的点，作图仍保留
+    # Exclude zero couplings from the correlations, but plot every pair.
     mask = x != 0
     x_corr = x[mask]
     y_corr = y[mask]
@@ -413,7 +412,7 @@ def corr_hij_Mij(hij, M, use_abs_hij=True):
     hij = np.asarray(hij)
     M = np.asarray(M)
     if hij.shape != M.shape or hij.ndim != 2:
-        raise ValueError("hij 和 M 需要同形状的方阵")
+        raise ValueError("hij and M must be square matrices of the same shape")
 
     N = hij.shape[0]
     iu = np.triu_indices(N, k=1)
@@ -422,24 +421,23 @@ def corr_hij_Mij(hij, M, use_abs_hij=True):
     if use_abs_hij:
         x = np.abs(x)
 
-    # Pearson 相关系数
+    # Pearson correlation
     r = np.corrcoef(x, y)[0, 1]
     return r
             
 # =========================
 #              main
 # =========================
-# ✅ 参照 analysis_v5.py：全局 Figure + display(fig.canvas) + widgets.interact
-# :contentReference[oaicite:2]{index=2}
+# Share the figure canvas with the interactive controls.
 fig = plt.figure(figsize=(8, 8))
 
 if __name__ == "__main__":
-    # 1) 载入图（P1）
+    # Load the screened graph.
     # P_total = load_P_json("P1_4*4_graph.json")
     # P_total = load_P_json("P1_2*2_graph.json")
     # P_total = load_P_json("P1_4*4_nn8_graph.json")
     P_total = load_P_json("P1_4*4_dense_graph.json")
-    # 2) 载入数据
+    # Load the samples.
     # npz_path = "fullinterac_dataset_gpu_4_4_withoutF.npz"
     # npz_path = "fullinterac_dataset_gpu_2_2_withoutF.npz"
     # npz_path = "fullinterac_dataset_gpu_4_4_nn8_withoutF.npz"
@@ -448,13 +446,13 @@ if __name__ == "__main__":
     data = {k: z[k] for k in z.files}
     print("[INFO] data keys (first 30):", list(data.keys())[:30])
 
-    # 3) 映射：Phi_? 用 data["flux"]，omega_? 用 data["omega_q_clean"]
+    # Map variable names to data columns.
     var_map = {
         "Phi": "flux",
         "omega": "omega_q_clean",
     }
 
-    # 4) 只对图中的边计算 MI
+    # Estimate MI on retained edges.
     mi_results = compute_flux_f_mi_on_edges(P_total, data, var_map, knn=3)
     print("[INFO] #edges:", len(mi_results))
 
@@ -476,21 +474,21 @@ if __name__ == "__main__":
     else:
         mi_max = 1.0
 
-    # ===== 交互控件（照 analysis_v5.py 的写法）=====
-    # 颜色断点 slider：范围按 MI 最大值自动设置（analysis_v5.py 是 0~1，这里更通用）
+    # Plot controls
+    # Scale the color sliders to the observed MI range.
     vmin_slider = widgets.FloatSlider(value=0.0, min=0.0, max=max(1.0, mi_max), step=max(1.0, mi_max)/200, description="vmin")
     vmin_mid_slider = widgets.FloatSlider(value=0.1, min=0.0, max=max(1.0, mi_max), step=max(1.0, mi_max)/200, description="vmin_mid")
     mid_slider  = widgets.FloatSlider(value=0.44, min=0.0, max=max(1.0, mi_max), step=max(1.0, mi_max)/200, description="mid")
     mid_vmax_slider = widgets.FloatSlider(value=0.66, min=0.0, max=max(1.0, mi_max), step=max(1.0, mi_max)/200, description="mid_vmax")
     vmax_slider = widgets.FloatSlider(value=min(1.0, mi_max) if mi_max <= 1.0 else mi_max, min=0.0, max=max(1.0, mi_max), step=max(1.0, mi_max)/200, description="vmax")
 
-    # 你要“点大小/线粗细”可控（analysis_v5.py 里是固定 node_size=400, font=18, width=3.0；这里默认同它）
+    # Node and edge styling
     node_size_slider = widgets.IntSlider(value=400, min=100, max=2000, step=50, description="node")
     font_size_slider = widgets.IntSlider(value=18, min=8, max=30, step=1, description="font")
     edge_width_slider = widgets.FloatSlider(value=3.0, min=0.5, max=10.0, step=0.1, description="lw")
     arrowsize_slider = widgets.IntSlider(value=20, min=6, max=40, step=1, description="arrow")
 
-    # 其他常用的也给你（可留可删）
+    # MI threshold, curvature, and endpoint margins
     threshold_slider = widgets.FloatSlider(value=0.01, min=0.0, max=max(0.1, mi_max), step=max(0.1, mi_max)/200, description="thr")
     rad_bidir_slider = widgets.FloatSlider(value=0.15, min=0.0, max=1.0, step=0.01, description="rad2")
     rad_single_slider = widgets.FloatSlider(value=0.0, min=-1.0, max=1.0, step=0.01, description="rad1")
@@ -500,7 +498,6 @@ if __name__ == "__main__":
     def _plot_wrapper(vmin, vmin_mid, mid, mid_vmax, vmax,
                       node_size, font_size, edge_width, arrowsize,
                       threshold, RAD_BIDIR, RAD_SINGLE, source_margin, target_margin):
-        # 保持你原 plot_grid_with_mi 的逻辑：只把参数从 slider 注入
         plot_grid_with_mi(
             mi_results,
             width=2, length=2,

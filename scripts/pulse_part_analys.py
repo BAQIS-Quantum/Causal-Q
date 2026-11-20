@@ -115,7 +115,7 @@ def plot_results(
     plt.subplot(1,3,2)
     h_eff = data["hij"]  # expected shape (N, N)
     if h_eff.shape != (N, N):
-        raise ValueError(f"hij shape {h_eff.shape} != S_mat shape {(N, N)} 不一致")
+        raise ValueError(f"hij shape {h_eff.shape} and S_mat shape {(N, N)} must match")
 
     h_eff_abs = np.abs(h_eff)
     plt.imshow(h_eff_abs, origin='lower', cmap=h_cmap or 'magma', norm=h_norm)
@@ -431,13 +431,13 @@ def show_interactive_plots(S_mat, data):
 # with np.load("dataset2_gpu_1_8_chain_withF.npz", allow_pickle=True) as f:
 # with np.load("dataset_gpu_1_8_chain_withF.npz", allow_pickle=True) as f:
 
-# chain 热图（论文图）
+# Chain heatmap for the paper
 # with np.load("interac_dataset_gpu_1_8_chain_withF-v2.npz",allow_pickle=True) as f: 
 
-# chain no interaction（论文图）
+# Uncoupled chain for the paper
 # with np.load("dataset_nointerac_gpu_1_8_chain_withF.npz",allow_pickle=True) as f:      
 
-# full 相互作用（论文图）
+# Fully coupled case for the paper
 
 
 

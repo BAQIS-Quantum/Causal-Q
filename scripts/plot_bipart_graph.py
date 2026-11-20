@@ -45,7 +45,7 @@ def load_mi_results(path):
             payload = json.load(f)
         return payload.get("mi_results", []), payload.get("meta", {})
     else:
-        raise ValueError("只支持 .npz 或 .json")
+        raise ValueError("Expected an .npz or .json file")
 
 
 def infer_num_qubits(mi_results):
@@ -58,7 +58,7 @@ def infer_num_qubits(mi_results):
 
 
 # =========================
-#   分段可调 colormap（颜色分布调节）
+#   Adjustable piecewise colormap
 # =========================
 def _make_strictly_increasing(arr, eps=1e-9):
     arr = list(arr)
@@ -149,7 +149,7 @@ def plot_bipartite(mi_results,
 
     weights = np.array(weights, dtype=float)
 
-    # vmin/vmax 兜底
+    # Ensure a nonzero color range.
     if vmax == vmin:
         vmax = vmin + 1e-12
 
@@ -183,10 +183,10 @@ def plot_bipartite(mi_results,
 
 
 # =========================
-#   main（widgets + Output 强制渲染）
+#   Interactive plot controls
 # =========================
 # 1) load
-# 手动指定文件：把 MI_PATH 改成具体的 .npz/.json 路径即可
+# Set MI_PATH to a file or use None to load the latest result.
 # MI_PATH = None
 # MI_PATH = "mi_results_20260104_230204.npz"
 MI_PATH = "mi_results_20260108_232543.npz"
@@ -197,7 +197,7 @@ print("[LOAD]", mi_path, "edges=", len(mi_results), "meta=", meta)
 mi_vals = np.array([float(x["MI"]) for x in mi_results], dtype=float) if mi_results else np.array([1.0])
 mi_max = float(mi_vals.max()) if mi_vals.size else 1.0
 
-# 2) sliders（只保留“颜色分布相关”的 + thr）
+# 2) threshold and color sliders
 thr_slider = widgets.FloatSlider(value=0.01, min=0.0, max=max(0.1, mi_max),
                                  step=max(0.1, mi_max)/200, description="thr")
 
@@ -212,7 +212,7 @@ mid_vmax_slider = widgets.FloatSlider(value=min(0.66, mi_max), min=0.0, max=max(
 vmax_slider = widgets.FloatSlider(value=mi_max, min=0.0, max=max(1.0, mi_max),
                                   step=max(1.0, mi_max)/200, description="vmax")
 
-# 3) output area（关键：强制显示）
+# 3) figure output
 out = widgets.Output()
 display(out)
 
@@ -224,7 +224,7 @@ def _wrap(thr, vmin, vmin_mid, mid, mid_vmax, vmax):
             threshold=thr,
             vmin=vmin, vmin_mid=vmin_mid, mid=mid, mid_vmax=mid_vmax, vmax=vmax,
         )
-        display(fig)  # ✅ 不要 display(fig.canvas)
+        display(fig)  # Render the figure in the output widget.
 
 widgets.interact(
     _wrap,
@@ -236,8 +236,8 @@ widgets.interact(
     vmax=vmax_slider,
 )
 
-# 4) save button（保存当前 fig）
-save_button = widgets.Button(description="保存PDF")
+# 4) save the current figure
+save_button = widgets.Button(description="Save PDF")
 
 def on_save_clicked(b):
     with out:
