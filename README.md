@@ -6,4 +6,16 @@ The repository includes two simulation benchmarks. The first uses flux and frequ
 
 These benchmarks accompany the paper *A Model-Free, Data-Driven Causal Graph Framework for Characterization and Calibration of Superconducting Quantum Chips*.
 
+## Installation
+
+With a Python 3.10 environment active, run
+
+```sh
+git clone https://github.com/BAQIS-Quantum/Causal-Q.git
+cd Causal-Q/reproduction
+python -m pip install -r requirements.txt
+```
+
+If you download the versioned ZIP, run the last command in the extracted folder.
+
 [Reproduction guide](reproduction/REPRODUCING.md) · [Download code and data](https://github.com/BAQIS-Quantum/Causal-Q/archive/refs/tags/v2026.11.20.1.zip)
